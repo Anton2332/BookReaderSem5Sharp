@@ -6,7 +6,8 @@ namespace DAL2;
 
 public class DBContext : DbContext
 {
-    public DbSet<Test> Tests { get; set; }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<Author> Authors { get; set; }
 
     public DBContext() : base()
     {
@@ -22,5 +23,6 @@ public class DBContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfiguration(new AuthorConfiguration());
+        modelBuilder.ApplyConfiguration(new BookConfiguration());
     }
 }
