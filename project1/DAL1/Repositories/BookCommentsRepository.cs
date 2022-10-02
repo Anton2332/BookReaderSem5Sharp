@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using DAL1.Interface;
 using DAL1.Model;
+using Dapper;
 
 namespace DAL1.Repositories;
 
