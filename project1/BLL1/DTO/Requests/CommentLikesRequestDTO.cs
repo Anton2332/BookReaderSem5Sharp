@@ -1,6 +1,6 @@
-﻿namespace DAL1.Model;
+﻿namespace BLL1.DTO.Requests;
 
-public class CommentLikes : Base
+public class CommentLikesRequestDTO
 {
     public int UserId {get; set;}
     public int BookId { get; set; }
