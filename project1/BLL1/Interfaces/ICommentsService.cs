@@ -5,7 +5,7 @@ namespace BLL1.Interfaces;
 
 public interface ICommentsService
 {
-    Task<IEnumerable<CommentsResponsDTO>> GetAllAsync(int id);
+    Task<IEnumerable<CommentsResponsDTO>> GetAllByBookIdAsync(int id);
     Task<int> AddAsync(CommentsRequestDTO comment);
     Task UpdateAsync(CommentsRequestDTO comment);
     Task DeleteAsync(int id);

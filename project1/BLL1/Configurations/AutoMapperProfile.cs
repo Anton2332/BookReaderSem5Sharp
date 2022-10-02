@@ -14,7 +14,9 @@ public class AutoMapperProfile : Profile
 
     private void CreateCommentsMaps()
     {
-        CreateMap<Comments, CommentsResponsDTO>();
+        CreateMap<Comments, CommentsResponsDTO>()
+            .ForMember("Firstname", p=>p.MapFrom(c => c.User.Firstname))
+            .ForMember("Lastname", p => p.MapFrom(c => c.User.Lastname));
         CreateMap<CommentsRequestDTO, Comments>();
     }
 
