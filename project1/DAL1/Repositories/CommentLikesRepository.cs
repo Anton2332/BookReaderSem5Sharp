@@ -27,5 +27,23 @@ public class CommentLikesRepository : GenericRepository<CommentLikes>, ICommentL
             param: new { Id = id },
             transaction: Transaction);
         return count.FirstOrDefault(0);
-    } 
+    }
+
+    public async Task<int> GetIdByUserIdAndCommentIAndLike(int userId, int commentId)
+    {
+        var Id = await Connection.QueryAsync<int>(
+            "select id from commentLikes c inner join likeDislike l on c.likeId = l.id where c.comentId = @CommentId and c.userId = @UserId and l.body = 'like'",
+            param:new {UserId = userId, CommentId = commentId},
+            transaction:Transaction);
+            return Id.First();
+    }
+    
+    public async Task<int> GetIdByUserIdAndCommentIAndDislike(int userId, int commentId)
+    {
+        var Id = await Connection.QueryAsync<int>(
+            "select id from commentLikes c inner join likeDislike l on c.likeId = l.id where c.comentId = @CommentId and c.userId = @UserId and l.body = 'dislike'",
+            param:new {UserId = userId, CommentId = commentId},
+            transaction:Transaction);
+        return Id.First();
+    }
 }

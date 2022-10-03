@@ -16,11 +16,11 @@ public class CommentsController: ControllerBase
     }
 
     [HttpGet("GetAllComments")]
-    public async Task<ActionResult<IEnumerable<CommentsResponsDTO>>> GetAll()
+    public async Task<ActionResult<IEnumerable<CommentsResponsDTO>>> GetAllByBookId(int bookId)
     {
         try
         {
-            var results = await _commentsService.GetAllAsync(1);
+            var results = await _commentsService.GetAllByBookIdAsync(bookId);
             return Ok(results);
         }
         catch (Exception ex)

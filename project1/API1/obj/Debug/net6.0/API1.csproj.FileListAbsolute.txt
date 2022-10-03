@@ -62,3 +62,11 @@ D:\study\5_semester\C#\projects\BookReader\project1\API1\obj\Debug\net6.0\ref\AP
 D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Azure.Core.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Azure.Identity.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\System.Memory.Data.dll

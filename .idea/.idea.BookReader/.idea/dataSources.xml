@@ -7,6 +7,9 @@
       <jdbc-driver>com.jetbrains.jdbc.sqlserver.SqlServerDriver</jdbc-driver>
       <jdbc-url>Server=localhost</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="Trust Server Certificate" value="true" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

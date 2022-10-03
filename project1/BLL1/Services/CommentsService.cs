@@ -18,6 +18,12 @@ public class CommentsService : ICommentsService
         _mapper = mapper;
     }
 
+    public async Task<IEnumerable<CommentsResponsDTO>> GetAllRepliesAsync(int id)
+    {
+        var result = await _unitOfWork.CommentsRepository.GetAllByCommentsIdAsync(id);
+        return result?.Select(_mapper.Map<Comments, CommentsResponsDTO>);
+    }
+
     public async Task<IEnumerable<CommentsResponsDTO>> GetAllByBookIdAsync(int id)
     {
         var result = await _unitOfWork.CommentsRepository.GetAllByBookIdAsync(id);

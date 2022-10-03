@@ -7,5 +7,7 @@ namespace BLL1.Configurations;
 public static class ServicesRegistrator
 {
     public static IServiceCollection AddServices(this IServiceCollection service) => service
-        .AddTransient<ICommentsService, CommentsService>();
+        .AddTransient<ICommentsService, CommentsService>()
+        // .AddTransient(ICommentLikesService, CommentLikesService)
+    ;
 }
