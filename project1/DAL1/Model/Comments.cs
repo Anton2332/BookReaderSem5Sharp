@@ -1,11 +1,7 @@
 ﻿namespace DAL1.Model;
 
-public class Comments : Base
+public class Comments : BaseComments
 {
-    public string? UserId { get; set; }
-    public UserComments User { get; set; }
-    public int BookId { get; set; }
-    public string? Body { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public int RepliesId { get; set; }
+    public int Id { get; set; }
+    public virtual UserComments? User { get; set; }
 }

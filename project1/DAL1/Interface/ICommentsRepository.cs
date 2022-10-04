@@ -2,7 +2,7 @@
 
 namespace DAL1.Interface;
 
-public interface ICommentsRepository : IGenericRepository<Comments>
+public interface ICommentsRepository : IGenericRepository<BaseComments>
 {
 
     Task<IEnumerable<Comments>> GetAllByBookIdAsync(int id);

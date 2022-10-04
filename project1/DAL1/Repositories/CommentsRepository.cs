@@ -5,12 +5,12 @@ using Dapper;
 
 namespace DAL1.Repositories;
 
-public class CommentsRepository : GenericRepository<Comments>, ICommentsRepository
+public class CommentsRepository : GenericRepository<BaseComments>, ICommentsRepository
 {
-    public CommentsRepository(IDbTransaction transaction) : base("comments", transaction)
+    public CommentsRepository(IDbTransaction transaction) : base("comments",  transaction)
     {
     }
-    
+
     public async Task<IEnumerable<Comments>> GetAllByBookIdAsync(int id)
     {
         var comments = await Connection.QueryAsync<Comments, UserComments, Comments

@@ -30,10 +30,11 @@ public class CommentsService : ICommentsService
         return result?.Select(_mapper.Map<Comments, CommentsResponsDTO>);
     }
     
-    public async Task<int> AddAsync(CommentsRequestDTO comment)
+    public async Task AddAsync(CommentsRequestDTO comment)
     {
-        var result = _mapper.Map<CommentsRequestDTO, Comments>(comment);
-        return await _unitOfWork.CommentsRepository.AddAsync(result);
+        var result = _mapper.Map<CommentsRequestDTO, BaseComments>(comment);
+        await _unitOfWork.CommentsRepository.AddAsync(result);
+        _unitOfWork.Commit();
     }
 
     public async Task UpdateAsync(CommentsRequestDTO comment)
@@ -41,7 +42,7 @@ public class CommentsService : ICommentsService
         var result = _mapper.Map<CommentsRequestDTO, Comments>(comment);
         await _unitOfWork.CommentsRepository.ReplaceAsync(result);
     }
-
+    
     public async Task DeleteAsync(int id)
     {
         await _unitOfWork.CommentsRepository.DeleteAsync(id);

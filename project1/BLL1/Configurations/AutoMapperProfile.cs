@@ -18,7 +18,7 @@ public class AutoMapperProfile : Profile
         CreateMap<Comments, CommentsResponsDTO>()
             .ForMember("Firstname", p=>p.MapFrom(c => c.User.Firstname))
             .ForMember("Lastname", p => p.MapFrom(c => c.User.Lastname));
-        CreateMap<CommentsRequestDTO, Comments>();
+        CreateMap<CommentsRequestDTO, BaseComments>();
     }
 
     private void CreateCommetnLikesService()

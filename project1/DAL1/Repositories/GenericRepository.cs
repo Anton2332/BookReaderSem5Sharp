@@ -40,7 +40,7 @@ public class GenericRepository<T> : RepositoryBase, IGenericRepository<T> where 
                     $"DELETE FROM {_tableName} WHERE Id=@Id", new { Id = id }, transaction: Transaction);
             }
     
-            public async Task<int> AddAsync(T t)
+            public virtual async Task<int> AddAsync(T t)
             {
                 var insertQuery = GenerateInsertQuery();
                 var newId = await Connection.ExecuteScalarAsync<int>(
