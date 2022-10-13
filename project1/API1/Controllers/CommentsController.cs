@@ -59,32 +59,32 @@ public class CommentsController : ControllerBase
         }
     }
 
-    // [HttpPut("UpdateComment")]
-    // public async Task<ActionResult> UpdateComment(CommentsRequestDTO comment)
-    // {
-    //     try
-    //     {
-    //         await _commentsService.UpdateAsync(comment);
-    //         return Ok();
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error");
-    //     }
-    // }
-    //
-    // [HttpDelete("DeleteComment")]
-    // public async Task<ActionResult> DeleteComment(int id)
-    // {
-    //     try
-    //     {
-    //         await _commentsService.DeleteAsync(id);
-    //         return Ok();
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error");
-    //     }
-    // }
+    [HttpPut("UpdateComment")]
+    public async Task<ActionResult> UpdateComment(CommentsRequestDTO comment)
+    {
+        try
+        {
+            await _commentsService.UpdateAsync(comment);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error");
+        }
+    }
+    
+    [HttpDelete("DeleteComment")]
+    public async Task<ActionResult> DeleteComment(int id)
+    {
+        try
+        {
+            await _commentsService.DeleteAsync(id);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error");
+        }
+    }
 
 }

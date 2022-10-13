@@ -11,6 +11,7 @@ public class AutoMapperProfile : Profile
     public AutoMapperProfile()
     {
         CreateCommentsMaps();
+        CreateCommentLikesService();
     }
 
     private void CreateCommentsMaps()
@@ -21,7 +22,7 @@ public class AutoMapperProfile : Profile
         CreateMap<CommentsRequestDTO, BaseComments>();
     }
 
-    private void CreateCommetnLikesService()
+    private void CreateCommentLikesService()
     {
         CreateMap<CommentLikesRequestDTO, CommentLikes>();
     }

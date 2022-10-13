@@ -41,11 +41,13 @@ public class CommentsService : ICommentsService
     {
         var result = _mapper.Map<CommentsRequestDTO, Comments>(comment);
         await _unitOfWork.CommentsRepository.ReplaceAsync(result);
+        _unitOfWork.Commit();
     }
     
     public async Task DeleteAsync(int id)
     {
         await _unitOfWork.CommentsRepository.DeleteAsync(id);
+        _unitOfWork.Commit();
     }
 
 }

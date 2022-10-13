@@ -10,6 +10,22 @@ public class CommentsRepository : GenericRepository<BaseComments>, ICommentsRepo
     public CommentsRepository(IDbTransaction transaction) : base("comments",  transaction)
     {
     }
+    
+    public async Task<IEnumerable<Comments>> GetAllByBookIdButNotRepliesAsync(int id)
+    {
+        var comments = await Connection.QueryAsync<Comments, UserComments, Comments
+        >(
+            "select * from comments c inner join usersComments u on c.userId = u.Id where c.BookId = @Id and c.repliesId = null",
+            (comments, user) =>
+            {
+                comments.User = user;
+                return comments;
+            },
+            param:new{Id = id},
+            transaction:Transaction);
+
+        return comments;
+    }
 
     public async Task<IEnumerable<Comments>> GetAllByBookIdAsync(int id)
     {

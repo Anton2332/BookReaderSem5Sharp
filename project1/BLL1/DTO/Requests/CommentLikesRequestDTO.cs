@@ -2,7 +2,7 @@
 
 public class CommentLikesRequestDTO
 {
-    public int UserId {get; set;}
-    public int BookId { get; set; }
-    public int LikeId { get; set; }
+    public int Id { get; set; }
+    public string UserId {get; set;}
+    public int CommentId { get; set; }
 }

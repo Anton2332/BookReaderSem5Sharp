@@ -8,6 +8,7 @@ public static class ServicesRegistrator
 {
     public static IServiceCollection AddServices(this IServiceCollection service) => service
         .AddTransient<ICommentsService, CommentsService>()
-        // .AddTransient(ICommentLikesService, CommentLikesService)
+        .AddTransient<ICommentsLikesService, CommentsLikesService>()
+        // .AddTransient<>()
     ;
 }

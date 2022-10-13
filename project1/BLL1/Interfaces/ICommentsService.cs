@@ -8,6 +8,6 @@ public interface ICommentsService
     Task<IEnumerable<CommentsResponsDTO>> GetAllRepliesAsync(int id);
     Task<IEnumerable<CommentsResponsDTO>> GetAllByBookIdAsync(int id);
     Task AddAsync(CommentsRequestDTO comment);
-    // Task UpdateAsync(CommentsRequestDTO comment);
-    // Task DeleteAsync(int id);
+    Task UpdateAsync(CommentsRequestDTO comment);
+    Task DeleteAsync(int id);
 }
