@@ -4,5 +4,5 @@ public class Author : EntityBase
 {
     public string Name { get; set; }
     
-    public virtual ICollection<Book> Books { get; set; }
+    public ICollection<BookAuthor> BookAuthor { get; set; }
 }

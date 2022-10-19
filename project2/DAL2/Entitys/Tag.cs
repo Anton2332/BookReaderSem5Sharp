@@ -4,5 +4,5 @@ public class Tag : EntityBase
 {
     public string Name { get; set; }
     
-    public virtual ICollection<Book> Books { get; set; }
+    public virtual ICollection<BookTag> BookTags { get; set; }
 }

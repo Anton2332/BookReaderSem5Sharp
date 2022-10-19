@@ -4,7 +4,7 @@ namespace DAL2.Entitys;
 
 public class Chapter : EntityBase
 {
-    public int UserId { get; set; }
+    public string UserId { get; set; }
     public UserBook User { get; set; }
     
     public int BookId { get; set; }

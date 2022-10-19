@@ -11,12 +11,12 @@ public class Book : EntityBase
     public int LanguageId { get; set; }
     public Language Language { get; set; }
     
-    public int BookStatus { get; set; }
+    public int StatusId { get; set; }
     public Status Status { get; set; }
     
-    public virtual ICollection<Author> Authors { get; set; }
-    public virtual ICollection<Category> Categories { get; set; }
-    public virtual ICollection<Tag> Tags { get; set; }
+    public ICollection<BookAuthor> BookAuthor { get; set; }
+    public ICollection<BookCategory> BookCategory { get; set; }
+    public ICollection<BookTag> BookTag { get; set; }
 
     public ICollection<Chapter> Chapters { get; set; }
     public ICollection<Rating> Ratings { get; set; }
