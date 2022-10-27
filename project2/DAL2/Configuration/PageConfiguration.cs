@@ -14,11 +14,15 @@ public class PageConfiguration : IEntityTypeConfiguration<Page>
             .WithMany(ch => ch.Pages)
             .HasForeignKey(p => p.ChapterId);
 
-        builder.Property(p => p.XmlContent).HasColumnType("xml");
+        builder.Property(p => p.Content)
+            .HasColumnType("text")
+            .IsRequired()
+            ;
 
-        builder.Ignore(p => p.XmlValueWrapper);
-        //     this.Property(c => c.XmlContent).HasColumnType("xml");
-        //
-        //     this.Ignore(c => c.XmlValueWrapper);
+        builder.Property(p => p.Image)
+            .IsRequired()
+            ;
+        
+
     }
 }

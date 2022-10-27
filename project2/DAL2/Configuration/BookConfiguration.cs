@@ -10,9 +10,6 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
     {
         builder.HasKey(x => x.Id);
 
-        // builder.HasMany(b => b.Authors)
-        //     .WithMany(a => a.Books);
-
         builder.HasOne(b => b.Language)
             .WithMany(l => l.Books)
             .HasForeignKey(b => b.LanguageId);
@@ -21,8 +18,11 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
             .WithMany(s => s.Books)
             .HasForeignKey(b => b.StatusId);
 
+        builder.Property(b => b.Image).IsRequired();
 
-
-
+        builder.Property(b => b.Description)
+            .HasColumnType("text")
+            ;
+        
     }
 }

@@ -18,5 +18,14 @@ public class ChapterConfiguration : IEntityTypeConfiguration<Chapter>
             .WithMany(u => u.Chapters)
             .HasForeignKey(ch => ch.UserId);
 
+        builder.HasIndex(x => new
+        {
+            x.BookId,
+            x.ChapterId
+        }).IsUnique();
+
+        builder.Property(x => x.ChapterName).HasMaxLength(250)
+            ;
+
     }
 }

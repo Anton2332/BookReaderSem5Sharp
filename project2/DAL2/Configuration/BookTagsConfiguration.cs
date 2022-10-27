@@ -17,5 +17,7 @@ public class BookTagsConfiguration : IEntityTypeConfiguration<BookTag>
         builder.HasOne(bt => bt.Tag)
             .WithMany(t => t.BookTags)
             .HasForeignKey(bt => bt.TagId);
+        
+        
     }
 }

@@ -10,7 +10,6 @@
       <Folder Include="Enums" />
       <Folder Include="Helpers" />
       <Folder Include="Models" />
-      <Folder Include="Seeding" />
     </ItemGroup>
 
     <ItemGroup>

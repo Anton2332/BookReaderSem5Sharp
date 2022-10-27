@@ -10,5 +10,11 @@ public class AuthorConfiguration : IEntityTypeConfiguration<Author>
     {
         builder.HasKey(x => x.Id);
         
+        builder.HasIndex(x => x.Name)
+            .IsUnique()
+            ;
+
+        builder.Property(x => x.Name).HasMaxLength(100);
+
     }
 }
