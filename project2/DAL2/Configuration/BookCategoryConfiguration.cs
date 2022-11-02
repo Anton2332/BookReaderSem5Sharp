@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,10 +13,14 @@ public class BookCategoryConfiguration : IEntityTypeConfiguration<BookCategory>
 
         builder.HasOne(bc => bc.Book)
             .WithMany(b => b.BookCategory)
-            .HasForeignKey(bc => bc.BookId);
+            .HasForeignKey(bc => bc.BookId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(bc => bc.Category)
             .WithMany(c => c.BooksCategories)
-            .HasForeignKey(bc => bc.CategoryId);
+            .HasForeignKey(bc => bc.CategoryId)
+            .OnDelete(DeleteBehavior.Cascade);
+        
+        new BookCategorySeeder().Seed(builder);
     }
 }

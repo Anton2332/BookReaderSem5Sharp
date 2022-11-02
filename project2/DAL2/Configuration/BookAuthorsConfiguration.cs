@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,10 +13,14 @@ public class BookAuthorsConfiguration : IEntityTypeConfiguration<BookAuthor>
 
         builder.HasOne(ba => ba.Book)
             .WithMany(b => b.BookAuthor)
-            .HasForeignKey(ba => ba.BookId);
+            .HasForeignKey(ba => ba.BookId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(ba => ba.Author)
             .WithMany(b => b.BookAuthor)
-            .HasForeignKey(ba => ba.AuthorId);
+            .HasForeignKey(ba => ba.AuthorId)
+            .OnDelete(DeleteBehavior.Cascade);
+        
+        new BookAuthorSeeder().Seed(builder);
     }
 }

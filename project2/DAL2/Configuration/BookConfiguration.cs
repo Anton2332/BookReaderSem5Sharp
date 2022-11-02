@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -23,6 +24,8 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
         builder.Property(b => b.Description)
             .HasColumnType("text")
             ;
+        
+        new BookSeeder().Seed(builder);
         
     }
 }

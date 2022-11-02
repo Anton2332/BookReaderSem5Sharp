@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,12 +13,14 @@ public class BookTagsConfiguration : IEntityTypeConfiguration<BookTag>
 
         builder.HasOne(bt => bt.Book)
             .WithMany(b => b.BookTag)
-            .HasForeignKey(bt => bt.BookId);
+            .HasForeignKey(bt => bt.BookId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(bt => bt.Tag)
             .WithMany(t => t.BookTags)
-            .HasForeignKey(bt => bt.TagId);
-        
-        
+            .HasForeignKey(bt => bt.TagId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        new BookTagSeeder().Seed(builder);
     }
 }

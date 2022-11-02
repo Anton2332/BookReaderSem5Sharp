@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -16,5 +17,6 @@ public class AuthorConfiguration : IEntityTypeConfiguration<Author>
 
         builder.Property(x => x.Name).HasMaxLength(100);
 
+        new AuthorSeeder().Seed(builder);
     }
 }

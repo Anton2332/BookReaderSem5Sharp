@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,7 +13,8 @@ public class PageConfiguration : IEntityTypeConfiguration<Page>
 
         builder.HasOne(p => p.Chapter)
             .WithMany(ch => ch.Pages)
-            .HasForeignKey(p => p.ChapterId);
+            .HasForeignKey(p => p.ChapterId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.Property(p => p.Content)
             .HasColumnType("text")
@@ -23,6 +25,6 @@ public class PageConfiguration : IEntityTypeConfiguration<Page>
             .IsRequired()
             ;
         
-
+        new PageSeeder().Seed(builder);
     }
 }

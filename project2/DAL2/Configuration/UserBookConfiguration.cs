@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -10,5 +11,7 @@ public class UserBookConfiguration : IEntityTypeConfiguration<UserBook>
     public void Configure(EntityTypeBuilder<UserBook> builder)
     {
         builder.HasKey(x => x.Id);
+        
+        new UserBookSeeder().Seed(builder);
     }
 }

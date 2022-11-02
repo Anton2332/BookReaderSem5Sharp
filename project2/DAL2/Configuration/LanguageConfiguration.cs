@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,6 +16,8 @@ public class LanguageConfiguration : IEntityTypeConfiguration<Language>
         
         builder.HasIndex(x => x.Abbreviated).IsUnique();
         builder.Property(x => x.Abbreviated).HasMaxLength(10);
+        
+        new LanguageSeeder().Seed(builder);
     }
         
 }

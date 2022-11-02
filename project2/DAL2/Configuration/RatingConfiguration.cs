@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,10 +13,14 @@ public class RatingConfiguration : IEntityTypeConfiguration<Rating>
 
         builder.HasOne(r => r.Book)
             .WithMany(b => b.Ratings)
-            .HasForeignKey(r => r.BookId);
+            .HasForeignKey(r => r.BookId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(r => r.User)
             .WithMany(u => u.Ratings)
-            .HasForeignKey(r => r.UserId);
+            .HasForeignKey(r => r.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+        
+        new RatingSeeder().Seed(builder);
     }
 }

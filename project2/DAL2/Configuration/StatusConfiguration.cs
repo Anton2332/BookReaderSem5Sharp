@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,6 +14,8 @@ public class StatusConfiguration : IEntityTypeConfiguration<Status>
 
         builder.HasIndex(x => x.Name).IsUnique();
         builder.Property(x => x.Name).HasMaxLength(100);
-
+        
+        
+        new StatusSeeder().Seed(builder);
     }
 }

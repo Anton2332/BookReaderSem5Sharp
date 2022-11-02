@@ -1,4 +1,5 @@
 ﻿using DAL2.Entitys;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,11 +13,13 @@ public class ChapterConfiguration : IEntityTypeConfiguration<Chapter>
 
         builder.HasOne(ch => ch.Book)
             .WithMany(b => b.Chapters)
-            .HasForeignKey(ch => ch.BookId);
+            .HasForeignKey(ch => ch.BookId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(ch => ch.User)
             .WithMany(u => u.Chapters)
-            .HasForeignKey(ch => ch.UserId);
+            .HasForeignKey(ch => ch.UserId)
+            .OnDelete(DeleteBehavior.SetNull);
 
         builder.HasIndex(x => new
         {
@@ -27,5 +30,6 @@ public class ChapterConfiguration : IEntityTypeConfiguration<Chapter>
         builder.Property(x => x.ChapterName).HasMaxLength(250)
             ;
 
+        new ChapterSeeder().Seed(builder);
     }
 }
