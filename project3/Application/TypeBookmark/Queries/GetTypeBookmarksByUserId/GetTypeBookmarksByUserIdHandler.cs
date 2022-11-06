@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.TypeBookmark.Queries.GetTypeBookmarksByUserId;
 
-public class GetTypeBookmarksByUserIdHandler : IRequestHandler<GetBookmarksByUserIdQuery, IEnumerable<TypeBookmarkDTO>>
+public class GetTypeBookmarksByUserIdHandler : IRequestHandler<GetTypeBookmarksByUserIdQuery, IEnumerable<TypeBookmarkDTO>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -16,7 +16,7 @@ public class GetTypeBookmarksByUserIdHandler : IRequestHandler<GetBookmarksByUse
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<TypeBookmarkDTO>> Handle(GetBookmarksByUserIdQuery request,
+    public async Task<IEnumerable<TypeBookmarkDTO>> Handle(GetTypeBookmarksByUserIdQuery request,
         CancellationToken cancellationToken)
     {
         var entities = _unitOfWork.TypeBookmarkRepository.GetByUserId(request.Id, request.QueryOptions);

@@ -1,0 +1,15 @@
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\bin\Debug\net6.0\Domain.dll
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\bin\Debug\net6.0\Domain.pdb
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+D:\study\5_semester\C#\projects\BookReader\project3\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll

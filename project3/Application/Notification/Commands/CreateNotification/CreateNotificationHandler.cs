@@ -19,6 +19,9 @@ public class CreateNotificationHandler : IRequestHandler<CreateNotificationComma
     {
         Domain.Entities.Notification entity = _mapper.Map<Domain.Entities.Notification>(request.CreateNotificationDto);
         
+        // int lastId = _unitOfWork.no
+
+        entity.IsRead = false;
         entity.CreatedAt = DateTime.Now;
         entity.UpdateAt = DateTime.Now;
 

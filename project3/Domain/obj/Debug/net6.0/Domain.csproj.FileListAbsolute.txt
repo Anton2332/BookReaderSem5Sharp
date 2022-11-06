@@ -1,0 +1,12 @@
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\bin\Debug\net6.0\Domain.dll
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\bin\Debug\net6.0\Domain.pdb
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\Domain.dll
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\refint\Domain.dll
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\Domain.pdb
+D:\study\5_semester\C#\projects\BookReader\project3\Domain\obj\Debug\net6.0\ref\Domain.dll

@@ -17,9 +17,5 @@ public class CreateNotificationValidator : AbstractValidator<CreateNotificationC
         RuleFor(model => model.CreateNotificationDto.ChapterId)
             .Cascade(CascadeMode.Stop)
             .NotNull().WithMessage("ChapterId must be not null");
-
-        RuleFor(model => model.CreateNotificationDto.IsRead)
-            .Cascade(CascadeMode.Stop)
-            .NotNull().WithMessage("IsRead must be not null");
     }
 }

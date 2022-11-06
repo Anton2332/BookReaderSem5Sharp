@@ -20,6 +20,13 @@ public class CreateTypeBookmarkHandler : IRequestHandler<CreateTypeBookmarkComma
     {
         TypeBookmarks entity = _mapper.Map<TypeBookmarks>(request.CreateTypeBookmarkDto);
         
+        // new TypeBookmarks()
+        // {
+        //     Id = request.CreateTypeBookmarkDto.Id,
+        //     UserId = request.CreateTypeBookmarkDto.UserId,
+        //     Name = request.CreateTypeBookmarkDto.Name
+        // };
+        
         entity.CreatedAt = DateTime.Now;
         entity.UpdateAt = DateTime.Now;
 
