@@ -1,5 +1,6 @@
 ﻿using DAL2.Entitys;
 using DAL2.Interfaces;
+using DAL2.Seeding;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DAL2.Seeding;
