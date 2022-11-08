@@ -21,6 +21,12 @@ public class BookAuthorsConfiguration : IEntityTypeConfiguration<BookAuthor>
             .HasForeignKey(ba => ba.AuthorId)
             .OnDelete(DeleteBehavior.Cascade);
         
+        builder.HasIndex(x => new
+        {
+            x.BookId,
+            x.AuthorId
+        }).IsUnique();
+        
         new BookAuthorSeeder().Seed(builder);
     }
 }

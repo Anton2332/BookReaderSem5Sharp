@@ -8,7 +8,12 @@ public class LanguageSeeder : ISeeder<Language>
 {
     private readonly List<Language> _languages = new()
     {
-
+        new Language()
+        {
+            Id = 0,
+            Name = "Ukraine",
+            Abbreviated = "UKR"
+        }
     };
 
     public void Seed(EntityTypeBuilder<Language> builder) => builder.HasData(_languages);

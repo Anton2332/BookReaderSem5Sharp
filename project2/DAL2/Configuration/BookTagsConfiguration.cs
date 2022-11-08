@@ -20,6 +20,12 @@ public class BookTagsConfiguration : IEntityTypeConfiguration<BookTag>
             .WithMany(t => t.BookTags)
             .HasForeignKey(bt => bt.TagId)
             .OnDelete(DeleteBehavior.Cascade);
+        
+        builder.HasIndex(x => new
+        {
+            x.BookId,
+            x.TagId
+        }).IsUnique();
 
         new BookTagSeeder().Seed(builder);
     }

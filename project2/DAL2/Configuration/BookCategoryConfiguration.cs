@@ -21,6 +21,12 @@ public class BookCategoryConfiguration : IEntityTypeConfiguration<BookCategory>
             .HasForeignKey(bc => bc.CategoryId)
             .OnDelete(DeleteBehavior.Cascade);
         
+        builder.HasIndex(x => new
+        {
+            x.BookId,
+            x.CategoryId
+        }).IsUnique();
+        
         new BookCategorySeeder().Seed(builder);
     }
 }

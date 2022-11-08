@@ -11,6 +11,8 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
     {
         builder.HasKey(x => x.Id);
 
+        builder.Property(x => x.Image).IsRequired();
+        
         builder.HasOne(b => b.Language)
             .WithMany(l => l.Books)
             .HasForeignKey(b => b.LanguageId);

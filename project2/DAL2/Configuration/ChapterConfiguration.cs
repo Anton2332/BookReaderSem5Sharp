@@ -16,10 +16,11 @@ public class ChapterConfiguration : IEntityTypeConfiguration<Chapter>
             .HasForeignKey(ch => ch.BookId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        builder.Property(ch => ch.UserId).IsRequired();
         builder.HasOne(ch => ch.User)
             .WithMany(u => u.Chapters)
-            .HasForeignKey(ch => ch.UserId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .HasForeignKey(ch => ch.UserId);
+            // .OnDelete(DeleteBehavior.SetNull);
 
         builder.HasIndex(x => new
         {

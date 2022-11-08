@@ -21,6 +21,12 @@ public class RatingConfiguration : IEntityTypeConfiguration<Rating>
             .HasForeignKey(r => r.UserId)
             .OnDelete(DeleteBehavior.Cascade);
         
+        builder.HasIndex(x => new
+        {
+            x.BookId,
+            x.UserId
+        }).IsUnique();
+        
         new RatingSeeder().Seed(builder);
     }
 }

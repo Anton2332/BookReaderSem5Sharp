@@ -19,13 +19,21 @@ builder.Services.AddMapper();
 
 builder.Services.AddCors();
 
-builder.Services.AddDbContext<DBContext>();
+builder.Services.AddDbContext<DBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+// builder.Services.AddDbContext<DBContext>();
 // options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 
 builder.Services.AddTransient<ITestRepository, TestRepository>();
+builder.Services.AddTransient<IAuthorRepository, AuthorRepository>();
+builder.Services.AddTransient<IBookAuthorRepository, BookAuthorRepository>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddTransient<ITestService, TestService>();
+builder.Services.AddTransient<IAuthorService, AuthorService>();
 
 builder.Services.AddMvc(options =>
 {
