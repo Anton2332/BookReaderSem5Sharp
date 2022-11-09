@@ -9,4 +9,5 @@ public interface ITagService
     Task UpdateAsync(TagRequestDTO authorRequestDto);
     Task DeleteAsync(int id);
     Task<IEnumerable<TagResponseDTO>> GetAllAsync();
+    Task<TagResponseDTO> GetByIdAsync(int id);
 }

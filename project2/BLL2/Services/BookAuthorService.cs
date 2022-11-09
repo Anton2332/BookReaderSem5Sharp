@@ -43,4 +43,11 @@ public class BookAuthorService : IBookAuthorService
         var results = await _unitOfWork.BookAuthorRepository.GetAllAsync();
         return results?.Select(_mapper.Map<BookAuthor, BookAuthorResponseDTO>);
     }
+    
+    public async Task<BookAuthorResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.BookAuthorRepository.GetByIdAsync(id);
+        return _mapper.Map<BookAuthor, BookAuthorResponseDTO>(result);
+    }
+
 }

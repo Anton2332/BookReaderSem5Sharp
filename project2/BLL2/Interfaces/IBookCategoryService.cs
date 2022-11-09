@@ -9,4 +9,5 @@ public interface IBookCategoryService
     Task UpdateAsync(BookCategoryRequestDTO authorRequestDto);
     Task DeleteAsync(int id);
     Task<IEnumerable<BookCategoryResponseDTO>> GetAllAsync();
+    Task<BookCategoryResponseDTO> GetByIdAsync(int id);
 }

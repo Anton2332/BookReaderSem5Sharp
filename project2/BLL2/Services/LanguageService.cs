@@ -43,4 +43,10 @@ public class LanguageService : ILanguageService
         var results = await _unitOfWork.LanguageRepository.GetAllAsync();
         return results?.Select(_mapper.Map<Language, LanguageResponseDTO>);
     }
+    
+    public async Task<LanguageResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.LanguageRepository.GetByIdAsync(id);
+        return _mapper.Map<Language, LanguageResponseDTO>(result);
+    }
 }

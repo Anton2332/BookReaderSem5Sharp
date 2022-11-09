@@ -43,4 +43,10 @@ public class PageService : IPageService
         var results = await _unitOfWork.PageRepository.GetAllAsync();
         return results?.Select(_mapper.Map<Page, PageResponseDTO>);
     }
+    
+    public async Task<PageResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.PageRepository.GetByIdAsync(id);
+        return _mapper.Map<Page, PageResponseDTO>(result);
+    }
 }

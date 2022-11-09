@@ -9,4 +9,5 @@ public interface IBookAuthorService
     Task UpdateAsync(BookAuthorRequestDTO authorRequestDto);
     Task DeleteAsync(int id);
     Task<IEnumerable<BookAuthorResponseDTO>> GetAllAsync();
+    Task<BookAuthorResponseDTO> GetByIdAsync(int id);
 }

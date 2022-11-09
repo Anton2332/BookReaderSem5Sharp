@@ -43,4 +43,10 @@ public class BookService : IBookService
         var results = await _unitOfWork.BookRepository.GetAllAsync();
         return results?.Select(_mapper.Map<Book, BookResponseDTO>);
     }
+    
+    public async Task<BookResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.BookRepository.GetByIdAsync(id);
+        return _mapper.Map<Book, BookResponseDTO>(result);
+    }
 }

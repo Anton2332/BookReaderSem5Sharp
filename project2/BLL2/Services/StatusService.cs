@@ -43,4 +43,10 @@ public class StatusService : IStatusService
         var results = await _unitOfWork.StatusRepository.GetAllAsync();
         return results?.Select(_mapper.Map<Status, StatusResponseDTO>);
     }
+    
+    public async Task<StatusResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.StatusRepository.GetByIdAsync(id);
+        return _mapper.Map<Status, StatusResponseDTO>(result);
+    }
 }

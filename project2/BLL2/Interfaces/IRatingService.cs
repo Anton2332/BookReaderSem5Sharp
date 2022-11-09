@@ -9,4 +9,5 @@ public interface IRatingService
     Task UpdateAsync(RatingRequestDTO authorRequestDto);
     Task DeleteAsync(int id);
     Task<IEnumerable<RatingResponseDTO>> GetAllAsync();
+    Task<RatingResponseDTO> GetByIdAsync(int id);
 }

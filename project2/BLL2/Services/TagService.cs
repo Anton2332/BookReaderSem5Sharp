@@ -43,4 +43,10 @@ public class TagService : ITagService
         var results = await _unitOfWork.TagRepository.GetAllAsync();
         return results?.Select(_mapper.Map<Tag, TagResponseDTO>);
     }
+    
+    public async Task<TagResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.TagRepository.GetByIdAsync(id);
+        return _mapper.Map<Tag, TagResponseDTO>(result);
+    }
 }

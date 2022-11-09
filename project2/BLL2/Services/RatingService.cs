@@ -43,4 +43,10 @@ public class RatingService : IRatingService
         var results = await _unitOfWork.RatingRepository.GetAllAsync();
         return results?.Select(_mapper.Map<Rating, RatingResponseDTO>);
     }
+    
+    public async Task<RatingResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.RatingRepository.GetByIdAsync(id);
+        return _mapper.Map<Rating, RatingResponseDTO>(result);
+    }
 }

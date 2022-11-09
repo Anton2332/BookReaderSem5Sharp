@@ -9,4 +9,5 @@ public interface ILanguageService
     Task UpdateAsync(LanguageRequestDTO authorRequestDto);
     Task DeleteAsync(int id);
     Task<IEnumerable<LanguageResponseDTO>> GetAllAsync();
+    Task<LanguageResponseDTO> GetByIdAsync(int id);
 }

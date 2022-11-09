@@ -9,4 +9,5 @@ public interface IStatusService
     Task UpdateAsync(StatusRequestDTO authorRequestDto);
     Task DeleteAsync(int id);
     Task<IEnumerable<StatusResponseDTO>> GetAllAsync();
+    Task<StatusResponseDTO> GetByIdAsync(int id);
 }

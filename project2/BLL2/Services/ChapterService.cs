@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using BLL2.DTO.Request;
 using BLL2.DTO.Response;
+using BLL2.Interfaces;
 using DAL2.Entitys;
 using DAL2.Interfaces;
 
 namespace BLL2.Services;
 
-public class ChapterService
+public class ChapterService : IChapterService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -41,5 +42,11 @@ public class ChapterService
     {
         var results = await _unitOfWork.ChapterRepository.GetAllAsync();
         return results?.Select(_mapper.Map<Chapter, ChapterResponseDTO>);
+    }
+    
+    public async Task<ChapterResponseDTO> GetByIdAsync(int id)
+    {
+        var result = await _unitOfWork.ChapterRepository.GetByIdAsync(id);
+        return _mapper.Map<Chapter, ChapterResponseDTO>(result);
     }
 }

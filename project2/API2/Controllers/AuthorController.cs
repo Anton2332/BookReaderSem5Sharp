@@ -15,11 +15,11 @@ public class AuthorController : ControllerBase
     public AuthorController(IAuthorService authorService) => _authorService = authorService;
 
     [HttpPost("AddAuthor")]
-    public async Task<IActionResult> AddAuthorAsync([FromBody] AuthorRequestDTO authorResponseDto)
+    public async Task<IActionResult> AddAuthorAsync([FromBody] AuthorRequestDTO requestDto)
     {
         try
         {
-            await _authorService.AddAsync(authorResponseDto);
+            await _authorService.AddAsync(requestDto);
             return Ok();
         }
         catch (Exception e)
@@ -29,11 +29,11 @@ public class AuthorController : ControllerBase
     }
 
     [HttpPut("UpdateAuthor")]
-    public async Task<IActionResult> UpdateAuthorAsync([FromBody] AuthorRequestDTO authorResponseDto)
+    public async Task<IActionResult> UpdateAuthorAsync([FromBody] AuthorRequestDTO requestDto)
     {
         try
         {
-            await _authorService.UpdateAsync(authorResponseDto);
+            await _authorService.UpdateAsync(requestDto);
             return Ok();
         }
         catch (Exception e)

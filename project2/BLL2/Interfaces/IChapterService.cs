@@ -9,4 +9,5 @@ public interface IChapterService
     Task UpdateAsync(ChapterRequestDTO authorRequestDto);
     Task DeleteAsync(int id);
     Task<IEnumerable<ChapterResponseDTO>> GetAllAsync();
+    Task<ChapterResponseDTO> GetByIdAsync(int id);
 }
