@@ -11,7 +11,9 @@ public class BookAuthorRepository : GenericRepository<BookAuthor>, IBookAuthorRe
 
     public async Task<IEnumerable<BookAuthor>> GetAllAuthorsByBookIdAsync(int bookId,string? orderBy = null)
     {
-        var query = Items.Where(x => x.BookId == bookId);
+        var query = Items
+            .Where(x => x.BookId == bookId)
+            .Include(x => x.Author);
         return orderBy != null ? query.Order(orderBy) : await query.ToListAsync();
     }
 }

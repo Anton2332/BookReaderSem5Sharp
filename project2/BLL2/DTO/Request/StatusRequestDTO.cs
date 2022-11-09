@@ -1,6 +1,6 @@
 ﻿namespace BLL2.DTO.Request;
 
-public class AuthorRequestDTO
+public class StatusRequestDTO
 {
     public string Name { get; set; }
 }
