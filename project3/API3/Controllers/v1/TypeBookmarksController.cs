@@ -49,7 +49,7 @@ public class TypeBookmarksController : BaseController
         return Ok(result);
     }
 
-    [HttpDelete("DeleteTypeBookmark/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTypeBookmark(int id)
     {
         var result = await Mediator.Send(new DeleteTypeBookmarkCommand()
@@ -60,7 +60,7 @@ public class TypeBookmarksController : BaseController
         return Ok(result);
     }
 
-    [HttpGet("GetTypeBookmarkBy/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetTypeBookmarkById(int id)
     {
         var result = await Mediator.Send(new GetTypeBookmarkQuery()

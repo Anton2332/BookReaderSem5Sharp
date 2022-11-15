@@ -1,0 +1,20 @@
+﻿{
+  "Routes": [
+    //TypeBookmark Api
+    {
+      "DownstreamPathTemplate": "/TypeBookmarks/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/TypeBookmark/{id}",
+      "UpstreamHttpMethod": ["GET", "DELETE"]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5007"
+  }
+}
