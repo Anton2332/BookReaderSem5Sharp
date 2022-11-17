@@ -1,0 +1,12 @@
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\bin\Debug\net6.0\DAL_Redis.deps.json
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\bin\Debug\net6.0\DAL_Redis.dll
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\bin\Debug\net6.0\DAL_Redis.pdb
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\DAL_Redis.csproj.AssemblyReference.cache
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\DAL_Redis.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\DAL_Redis.AssemblyInfoInputs.cache
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\DAL_Redis.AssemblyInfo.cs
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\DAL_Redis.csproj.CoreCompileInputs.cache
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\DAL_Redis.dll
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\refint\DAL_Redis.dll
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\DAL_Redis.pdb
+D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\obj\Debug\net6.0\ref\DAL_Redis.dll
