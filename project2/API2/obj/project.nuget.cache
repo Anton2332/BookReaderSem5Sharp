@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "wN6bXqnnUuItS7l7LXqUOUnZmRJGJLzGE7vDb53Flr8Qeozu/iaGujKGhjY9xGaVkyP5WLc6+8uT5EZgMCGtjA==",
+  "dgSpecHash": "l64ghN6u/t2clk5dFSLchyYvFdEmHHuPAomr74F4GQnPRhMhSXMCaM2GvOtsF0/l51TgMZlKmoK2QaYmV8t38A==",
   "success": true,
   "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\API2\\API2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anton\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\fluentvalidation\\11.3.0\\fluentvalidation.11.3.0.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\masstransit\\8.0.9-develop.658\\masstransit.8.0.9-develop.658.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\masstransit.abstractions\\8.0.9-develop.658\\masstransit.abstractions.8.0.9-develop.658.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\masstransit.aspnetcore\\7.3.1\\masstransit.aspnetcore.7.3.1.nupkg.sha512",

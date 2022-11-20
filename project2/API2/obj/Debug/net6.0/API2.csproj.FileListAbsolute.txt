@@ -75,3 +75,6 @@ D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Rabbit
 D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\System.Text.Json.dll
 D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\SharedProject.dll
 D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\SharedProject.pdb
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\FluentValidation.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

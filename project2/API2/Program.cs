@@ -6,12 +6,14 @@ using BLL2.Services;
 using DAL2;
 using DAL2.Interfaces;
 using DAL2.Repository;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using BookCategoryService = BLL2.Services.BookCategoryService;
 
 var builder = WebApplication.CreateBuilder(args);
-
+{
 // Add services to the container.
 // builder.Services.AddMassTransit(x =>
 // {
@@ -30,6 +32,7 @@ var builder = WebApplication.CreateBuilder(args);
 //         });
 //     }));
 // });
+}
 
 builder.Services.AddMassTransit(config =>
 {
@@ -39,8 +42,6 @@ builder.Services.AddMassTransit(config =>
     });
 });
 
-// builder.Services.AddMassTransitHostedService();
-// builder.Services.AddHostedService<BookController>();
 builder.Services.AddOptions<MassTransitHostOptions>()
     .Configure(options =>
     {
@@ -55,7 +56,9 @@ builder.Services.AddOptions<MassTransitHostOptions>()
         // if specified, limits the wait time when stopping the bus
         options.StopTimeout = TimeSpan.FromSeconds(30);
     });
+
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -105,6 +108,17 @@ builder.Services.AddTransient<IUserBookService, UserBookService>();
 builder.Services.AddMvc(options =>
 {
     options.EnableEndpointRouting = false;
+});
+
+builder.Services.AddTransient<IValidatorFactory, ServiceProviderValidatorFactory>();
+
+builder.Services.AddMvc(options =>
+{
+    options.EnableEndpointRouting = false;
+}).AddFluentValidation(configuration =>
+{
+    configuration.RegisterValidatorsFromAssemblies(
+        AppDomain.CurrentDomain.GetAssemblies());
 });
 
 
