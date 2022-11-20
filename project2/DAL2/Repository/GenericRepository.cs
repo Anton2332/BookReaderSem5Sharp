@@ -33,13 +33,14 @@ public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : E
     public virtual async Task<TEntity> GetByIdAsync(int id, CancellationToken cancel = default)
         => await Items.SingleOrDefaultAsync(item => item.Id == id, cancel).ConfigureAwait(false);
 
-    public virtual async Task AddAsync(TEntity entity, CancellationToken cancel = default)
+    public virtual async Task<int> AddAsync(TEntity entity, CancellationToken cancel = default)
     {
         if (entity is null) throw new ArgumentNullException(nameof(entity));
         await Table.AddAsync(entity);
 
         if (AutoSaveChanges)
-            await DbContext.SaveChangesAsync(cancel).ConfigureAwait(false);        
+            await DbContext.SaveChangesAsync(cancel).ConfigureAwait(false);
+        return entity.Id;
     }
 
     public virtual async Task UpdateAsync(TEntity entity, CancellationToken cancel = default)

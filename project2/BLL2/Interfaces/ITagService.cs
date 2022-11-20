@@ -10,4 +10,5 @@ public interface ITagService
     Task DeleteAsync(int id);
     Task<IEnumerable<TagResponseDTO>> GetAllAsync();
     Task<TagResponseDTO> GetByIdAsync(int id);
+    Task<IEnumerable<TagResponseDTO>> GetAllWithoutIdsAsync(int[] ids, string? orderBy = null);
 }

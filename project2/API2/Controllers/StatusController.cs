@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class StatusController : ControllerBase
 {
     private readonly IStatusService _statusService;
@@ -11,7 +12,7 @@ public class StatusController : ControllerBase
     public StatusController(IStatusService statusService)
         => _statusService = statusService;
     
-    [HttpPost("AddStatus")]
+    [HttpPost]
     public async Task<IActionResult> AddStatusAsync([FromBody] StatusRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class StatusController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateStatus")]
+    [HttpPut]
     public async Task<IActionResult> UpdateStatusAsync([FromBody] StatusRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class StatusController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteStatus/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteStatusAsync(int id)
     {
         try
@@ -54,7 +55,7 @@ public class StatusController : ControllerBase
         }
     }
 
-    [HttpGet("GetStatus/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetStatusById(int id)
     {
         try
@@ -69,7 +70,7 @@ public class StatusController : ControllerBase
         }
     }
 
-    [HttpGet("GetStatuses")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try

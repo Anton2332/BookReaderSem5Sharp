@@ -20,7 +20,7 @@ public class ChapterConfiguration : IEntityTypeConfiguration<Chapter>
         builder.HasOne(ch => ch.User)
             .WithMany(u => u.Chapters)
             .HasForeignKey(ch => ch.UserId);
-            // .OnDelete(DeleteBehavior.SetNull);
+            // .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasIndex(x => new
         {

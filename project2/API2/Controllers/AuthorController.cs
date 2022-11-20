@@ -14,7 +14,7 @@ public class AuthorController : ControllerBase
 
     public AuthorController(IAuthorService authorService) => _authorService = authorService;
 
-    [HttpPost("AddAuthor")]
+    [HttpPost]
     public async Task<IActionResult> AddAuthorAsync([FromBody] AuthorRequestDTO requestDto)
     {
         try
@@ -28,7 +28,7 @@ public class AuthorController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateAuthor")]
+    [HttpPut]
     public async Task<IActionResult> UpdateAuthorAsync([FromBody] AuthorRequestDTO requestDto)
     {
         try
@@ -42,7 +42,7 @@ public class AuthorController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteAuthor/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAuthorAsync(int id)
     {
         try
@@ -57,7 +57,7 @@ public class AuthorController : ControllerBase
         }
     }
 
-    [HttpGet("GetAuthor/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetAuthorById(int id)
     {
         try
@@ -72,7 +72,7 @@ public class AuthorController : ControllerBase
         }
     }
 
-    [HttpGet("GetAuthors")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try
@@ -87,7 +87,7 @@ public class AuthorController : ControllerBase
     }
 
     [HttpPost("GetAuthorsWithoutIds")]
-    public async Task<IActionResult> GetAllWithoutAsync(int[] ids)
+    public async Task<IActionResult> GetAllWithoutAsync([FromBody] int[] ids)
     {
         try
         {

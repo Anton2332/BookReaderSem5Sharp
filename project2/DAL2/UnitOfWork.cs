@@ -6,7 +6,6 @@ public class UnitOfWork : IUnitOfWork
 {
     public readonly DBContext _dbContext;
     
-    public ITestRepository TestRepository { get; }
     public IAuthorRepository AuthorRepository { get; }
     public IBookAuthorRepository BookAuthorRepository { get; }
     public IBookCategoryRepository BookCategoryRepository { get; }
@@ -23,15 +22,34 @@ public class UnitOfWork : IUnitOfWork
 
     public UnitOfWork(
         DBContext dbContext, 
-        ITestRepository testRepository, 
         IAuthorRepository authorRepository,
-        IBookAuthorRepository bookAuthorRepository
-        )
+        IBookAuthorRepository bookAuthorRepository, 
+        IBookCategoryRepository bookCategoryRepository, 
+        IBookRepository bookRepository, 
+        IBookTagRepository bookTagRepository, 
+        ICategoryRepository categoryRepository, 
+        IChapterRepository chapterRepository, 
+        ILanguageRepository languageRepository, 
+        IPageRepository pageRepository, 
+        IRatingRepository ratingRepository, 
+        IStatusRepository statusRepository, 
+        ITagRepository tagRepository, 
+        IUserBookRepository userBookRepository)
     {
         _dbContext = dbContext;
-        TestRepository = testRepository;
         AuthorRepository = authorRepository;
         BookAuthorRepository = bookAuthorRepository;
+        BookCategoryRepository = bookCategoryRepository;
+        BookRepository = bookRepository;
+        BookTagRepository = bookTagRepository;
+        CategoryRepository = categoryRepository;
+        ChapterRepository = chapterRepository;
+        LanguageRepository = languageRepository;
+        PageRepository = pageRepository;
+        RatingRepository = ratingRepository;
+        StatusRepository = statusRepository;
+        TagRepository = tagRepository;
+        UserBookRepository = userBookRepository;
     }
     
     public DBContext DbContext

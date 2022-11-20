@@ -10,7 +10,7 @@ public class LanguageSeeder : ISeeder<Language>
     {
         new Language()
         {
-            Id = 0,
+            Id = 1,
             Name = "Ukraine",
             Abbreviated = "UKR"
         }

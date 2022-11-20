@@ -11,27 +11,27 @@ public class AuthorSeeder : ISeeder<Author>
     {
         new Author()
         {
-            Id = 0,
+            Id = 1,
             Name = "Сергій Жадан"
         },
         new Author()
         {
-            Id = 0,
+            Id = 2,
             Name = "Грицак Ярослав"
         },
         new Author()
         {
-            Id = 0,
+            Id = 3,
             Name = "Дал Роальд"
         },
         new Author()
         {
-            Id = 0,
+            Id = 4,
             Name = "Дашвар Люко"
         },
         new Author()
         {
-            Id = 0,
+            Id = 5,
             Name = "Дочинець Мирослав"
         },
     };

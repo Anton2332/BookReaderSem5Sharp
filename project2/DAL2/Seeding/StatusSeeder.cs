@@ -10,18 +10,18 @@ public class StatusSeeder : ISeeder<Status>
     {
         new Status()
         {
-            Id = 0,
+            Id = 1,
             Name = "finished"
         },
         new Status()
         {
-            Id = 0,
+            Id = 2,
             Name = "to throw"
         },
         new Status()
         {
-        Id = 0,
-        Name = "continues"
+            Id = 3,
+            Name = "continues"
         }
         
     };

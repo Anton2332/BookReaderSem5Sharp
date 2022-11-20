@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class BookAuthorController : ControllerBase
 {
     private readonly IBookAuthorService _bookAuthorService;
@@ -11,7 +13,7 @@ public class BookAuthorController : ControllerBase
     public BookAuthorController(IBookAuthorService bookAuthorService)
         => _bookAuthorService = bookAuthorService;
     
-    [HttpPost("AddBookAuthor")]
+    [HttpPost]
     public async Task<IActionResult> AddBookAuthorAsync([FromBody] BookAuthorRequestDTO requestDto)
     {
         try
@@ -25,7 +27,7 @@ public class BookAuthorController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateBookAuthor")]
+    [HttpPut]
     public async Task<IActionResult> UpdateBookAuthorAsync([FromBody] BookAuthorRequestDTO requestDto)
     {
         try
@@ -39,7 +41,7 @@ public class BookAuthorController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteBookAuthor/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBookAuthorAsync(int id)
     {
         try
@@ -53,28 +55,13 @@ public class BookAuthorController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
         }
     }
-
-    [HttpGet("GetBookAuthor/{id}")]
-    public async Task<IActionResult> GetBookAuthorById(int id)
+    
+    [HttpGet("GetAllByBookId/{bookId}")]
+    public async Task<IActionResult> GetAllByBookIdAsync(int bookId)
     {
         try
         {
-            var result = await _bookAuthorService.GetByIdAsync(id);
-
-            return Ok(result);
-        }
-        catch (Exception e)
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
-        }
-    }
-
-    [HttpGet("GetBookAuthors")]
-    public async Task<IActionResult> GetAllAsync()
-    {
-        try
-        {
-            var results = await _bookAuthorService.GetAllAsync();
+            var results = await _bookAuthorService.GetAllAuthorsByBookIdAsync(bookId, null);
             return Ok(results);
         }
         catch (Exception e)

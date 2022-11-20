@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class RatingController : ControllerBase
 {
     private readonly IRatingService _ratingService;
@@ -11,7 +12,7 @@ public class RatingController : ControllerBase
     public RatingController(IRatingService ratingService)
         => _ratingService = ratingService;
     
-    [HttpPost("AddRating")]
+    [HttpPost]
     public async Task<IActionResult> AddPageAsync([FromBody] RatingRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class RatingController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateRating")]
+    [HttpPut]
     public async Task<IActionResult> UpdatePageAsync([FromBody] RatingRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class RatingController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteRating/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePageAsync(int id)
     {
         try
@@ -54,7 +55,7 @@ public class RatingController : ControllerBase
         }
     }
 
-    [HttpGet("GetRating/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetPageById(int id)
     {
         try
@@ -69,7 +70,7 @@ public class RatingController : ControllerBase
         }
     }
 
-    [HttpGet("GetRatings")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try

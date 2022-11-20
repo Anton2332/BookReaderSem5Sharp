@@ -12,6 +12,8 @@ public class AutoMapperProfile : Profile
     {
         CreateTestMaps();
         CreateAuthorMaps();
+        CreateBookAuthorMaps();
+        CreateBookCategoryMaps();
         CreateCategoryMaps();
         CreateBookMaps();
         CreateBookTagMaps();
@@ -35,6 +37,22 @@ public class AutoMapperProfile : Profile
         CreateMap<AuthorRequestDTO, Author>();
         CreateMap<Author, AuthorResponseDTO>();
     }
+    
+    private void CreateBookAuthorMaps()
+    {
+        CreateMap<BookAuthorRequestDTO, BookAuthor>();
+        CreateMap<BookAuthor, BookAuthorResponseDTO>()
+            .ForMember("AuthorName" , x => x.MapFrom(a => a.Author.Name));
+
+    }
+
+    private void CreateBookCategoryMaps()
+    {
+        CreateMap<BookCategoryRequestDTO, BookCategory>();
+        CreateMap<BookCategory, BookCategoryResponseDTO>()
+            .ForMember("CategoryName", x => x.MapFrom(c => c.Category.Name));
+
+    }
 
     private void CreateBookMaps()
     {
@@ -45,7 +63,8 @@ public class AutoMapperProfile : Profile
     private void CreateBookTagMaps()
     {
         CreateMap<BookTagRequestDTO, BookTag>();
-        CreateMap<BookTag, BookTagResponseDTO>();
+        CreateMap<BookTag, BookTagResponseDTO>()
+            .ForMember("TagName", x => x.MapFrom(t => t.Tag.Name));
     }
     
     private void CreateCategoryMaps()

@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using BLL2.DTO.Request;
 using BLL2.DTO.Response;
+using BLL2.Interfaces;
 using DAL2.Entitys;
 using DAL2.Interfaces;
 
 namespace BLL2.Services;
 
-public class UserBookService
+public class UserBookService : IUserBookService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;

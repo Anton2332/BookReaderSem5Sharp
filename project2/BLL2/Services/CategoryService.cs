@@ -49,4 +49,10 @@ public class CategoryService : ICategoryService
         var result = await _unitOfWork.CategoryRepository.GetByIdAsync(id);
         return _mapper.Map<Category, CategoryResponseDTO>(result);
     }
+
+    public async Task<IEnumerable<CategoryResponseDTO>> GetAllWithoutIdsAsync(int[] ids, string? orderBy = null)
+    {
+        var results = await _unitOfWork.CategoryRepository.GetAllWithoutIdsAsync(ids);
+        return results?.Select(_mapper.Map<Category, CategoryResponseDTO>);
+    }
 }

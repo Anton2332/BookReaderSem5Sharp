@@ -38,16 +38,10 @@ public class BookAuthorService : IBookAuthorService
         await _unitOfWork.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<BookAuthorResponseDTO>> GetAllAsync()
+    public async Task<IEnumerable<BookAuthorResponseDTO>> GetAllAuthorsByBookIdAsync(int bookId, string? orderBy)
     {
-        var results = await _unitOfWork.BookAuthorRepository.GetAllAsync();
+        var results = await _unitOfWork.BookAuthorRepository.GetAllAuthorsByBookIdAsync(bookId, orderBy);
         return results?.Select(_mapper.Map<BookAuthor, BookAuthorResponseDTO>);
-    }
-    
-    public async Task<BookAuthorResponseDTO> GetByIdAsync(int id)
-    {
-        var result = await _unitOfWork.BookAuthorRepository.GetByIdAsync(id);
-        return _mapper.Map<BookAuthor, BookAuthorResponseDTO>(result);
     }
 
 }

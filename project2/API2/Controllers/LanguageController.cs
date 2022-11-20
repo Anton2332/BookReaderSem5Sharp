@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class LanguageController : ControllerBase
 {
     private readonly ILanguageService _languageService;
@@ -11,7 +12,7 @@ public class LanguageController : ControllerBase
     public LanguageController(ILanguageService languageService)
         => _languageService = languageService;
     
-    [HttpPost("AddLanguage")]
+    [HttpPost]
     public async Task<IActionResult> AddLanguageAsync([FromBody] LanguageRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class LanguageController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateLanguage")]
+    [HttpPut]
     public async Task<IActionResult> UpdateLanguageAsync([FromBody] LanguageRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class LanguageController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteLanguage/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteLanguageAsync(int id)
     {
         try
@@ -54,7 +55,7 @@ public class LanguageController : ControllerBase
         }
     }
 
-    [HttpGet("GetLanguage/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetLanguageById(int id)
     {
         try
@@ -69,7 +70,7 @@ public class LanguageController : ControllerBase
         }
     }
 
-    [HttpGet("GetLanguages")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try

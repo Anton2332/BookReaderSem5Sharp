@@ -28,6 +28,9 @@
             "projectReferences": {
               "D:\\study\\5_semester\\C#\\projects\\BookReader\\project1\\BLL1\\BLL1.csproj": {
                 "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project1\\BLL1\\BLL1.csproj"
+              },
+              "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj": {
+                "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj"
               }
             }
           }
@@ -42,6 +45,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.0.9-develop.658, )"
+            },
+            "MassTransit.AspNetCore": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.0.9-develop.658, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
@@ -198,6 +213,59 @@
               "version": "[1.0.4, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj",
+        "projectName": "SharedProject",
+        "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj",
+        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
+        "outputPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class PageController : ControllerBase
 {
     private readonly IPageService _pageService;
@@ -11,7 +12,7 @@ public class PageController : ControllerBase
     public PageController(IPageService pageService)
         => _pageService = pageService;
     
-    [HttpPost("AddPage")]
+    [HttpPost]
     public async Task<IActionResult> AddPageAsync([FromBody] PageRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class PageController : ControllerBase
         }
     }
 
-    [HttpPut("UpdatePage")]
+    [HttpPut]
     public async Task<IActionResult> UpdatePageAsync([FromBody] PageRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class PageController : ControllerBase
         }
     }
 
-    [HttpDelete("DeletePage/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePageAsync(int id)
     {
         try
@@ -54,7 +55,7 @@ public class PageController : ControllerBase
         }
     }
 
-    [HttpGet("GetPage/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetPageById(int id)
     {
         try
@@ -69,7 +70,7 @@ public class PageController : ControllerBase
         }
     }
 
-    [HttpGet("GetPages")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try

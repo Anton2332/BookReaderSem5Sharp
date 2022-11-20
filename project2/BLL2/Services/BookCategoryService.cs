@@ -38,15 +38,9 @@ public class BookCategoryService : IBookCategoryService
         await _unitOfWork.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<BookCategoryResponseDTO>> GetAllAsync()
+    public async Task<IEnumerable<BookCategoryResponseDTO>> GetAllCategoriesByBookIdAsync(int bookId, string? orderBy)
     {
-        var results = await _unitOfWork.BookCategoryRepository.GetAllAsync();
+        var results = await _unitOfWork.BookCategoryRepository.GetAllCategoriesByBookIdAsync(bookId, orderBy);
         return results?.Select(_mapper.Map<BookCategory, BookCategoryResponseDTO>);
-    }
-    
-    public async Task<BookCategoryResponseDTO> GetByIdAsync(int id)
-    {
-        var result = await _unitOfWork.BookCategoryRepository.GetByIdAsync(id);
-        return _mapper.Map<BookCategory, BookCategoryResponseDTO>(result);
     }
 }

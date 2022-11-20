@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class TagController : ControllerBase
 {
     private readonly ITagService _tagService;
@@ -11,7 +12,7 @@ public class TagController : ControllerBase
     public TagController(ITagService tagService)
         => _tagService = tagService;
     
-    [HttpPost("AddTag")]
+    [HttpPost]
     public async Task<IActionResult> AddTagAsync([FromBody] TagRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class TagController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateTag")]
+    [HttpPut]
     public async Task<IActionResult> UpdateTagAsync([FromBody] TagRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class TagController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteTag/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTagAsync(int id)
     {
         try
@@ -54,7 +55,7 @@ public class TagController : ControllerBase
         }
     }
 
-    [HttpGet("GetTag/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetTagById(int id)
     {
         try
@@ -69,12 +70,26 @@ public class TagController : ControllerBase
         }
     }
 
-    [HttpGet("GetTags")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try
         {
             var results = await _tagService.GetAllAsync();
+            return Ok(results);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
+    
+    [HttpPost("GetTagsWithoutIds")]
+    public async Task<IActionResult> GetAllWithoutAsync([FromBody] int[] ids)
+    {
+        try
+        {
+            var results = await _tagService.GetAllWithoutIdsAsync(ids);
             return Ok(results);
         }
         catch (Exception e)

@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using BLL1.DTO.Requests;
 using BLL1.DTO.Responses;
+using BLL1.Interfaces;
 using DAL1.Interface;
 using DAL1.Model;
 
 namespace BLL1.Services;
 
-public class BookCommentsService
+public class BookCommentsService : IBookCommentsService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -17,7 +18,7 @@ public class BookCommentsService
         _mapper = mapper;
     }
     
-    public async Task<IEnumerable<BookCommentsResponseDTO>> GetAllAsync(int id)
+    public async Task<IEnumerable<BookCommentsResponseDTO>> GetAllAsync()
     {
         var result = await _unitOfWork.BookCommentsRepository.GetAllAsync();
         return result?.Select(_mapper.Map<BookComments, BookCommentsResponseDTO>);

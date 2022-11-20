@@ -10,4 +10,5 @@ public interface ICategoryService
     Task DeleteAsync(int id);
     Task<IEnumerable<CategoryResponseDTO>> GetAllAsync();
     Task<CategoryResponseDTO> GetByIdAsync(int id);
+    Task<IEnumerable<CategoryResponseDTO>> GetAllWithoutIdsAsync(int[] ids, string? orderBy = null);
 }

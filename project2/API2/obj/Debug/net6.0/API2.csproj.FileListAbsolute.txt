@@ -66,3 +66,12 @@ D:\study\5_semester\C#\projects\BookReader\project2\API2\obj\Debug\net6.0\refint
 D:\study\5_semester\C#\projects\BookReader\project2\API2\obj\Debug\net6.0\API2.pdb
 D:\study\5_semester\C#\projects\BookReader\project2\API2\obj\Debug\net6.0\API2.genruntimeconfig.cache
 D:\study\5_semester\C#\projects\BookReader\project2\API2\obj\Debug\net6.0\ref\API2.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\MassTransit.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\MassTransit.Abstractions.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\MassTransit.AspNetCoreIntegration.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\MassTransit.RabbitMqTransport.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\System.Text.Json.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\SharedProject.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\SharedProject.pdb

@@ -10,22 +10,22 @@ public class CategorySeeder : ISeeder<Category>
     {
         new Category()
         {
-            Id = 0,
+            Id = 1,
             Name = "Ethnic & Cultural"
         },
         new Category()
         {
-            Id = 0,
+            Id = 2,
             Name = "Europe"
         },
         new Category()
         {
-            Id = 0,
+            Id = 3,
             Name = "Historical"
         },
         new Category()
         {
-            Id = 0,
+            Id = 4,
             Name = "Military"
         }
 

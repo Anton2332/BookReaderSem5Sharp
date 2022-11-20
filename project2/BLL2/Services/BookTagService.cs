@@ -49,4 +49,10 @@ public class BookTagService : IBookTagService
         var result = await _unitOfWork.BookTagRepository.GetByIdAsync(id);
         return _mapper.Map<BookTag, BookTagResponseDTO>(result);
     }
+
+    public async Task<IEnumerable<BookTagResponseDTO>> GetAllTagsByBookIdAsync(int bookId, string? orderBy)
+    {
+        var results = await _unitOfWork.BookTagRepository.GetAllTagsByBookIdAsync(bookId, orderBy);
+        return results?.Select(_mapper.Map<BookTag, BookTagResponseDTO>);
+    }
 }

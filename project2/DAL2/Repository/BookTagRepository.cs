@@ -11,7 +11,9 @@ public class BookTagRepository : GenericRepository<BookTag>, IBookTagRepository
     
     public async Task<IEnumerable<BookTag>> GetAllTagsByBookIdAsync(int bookId,string? orderBy = null)
     {
-        var query = Items.Where(x => x.BookId == bookId);
+        var query = Items
+            .Where(x => x.BookId == bookId)
+            .Include(x => x.Tag);
         return orderBy != null ? query.Order(orderBy) : await query.ToListAsync();
     }
 }

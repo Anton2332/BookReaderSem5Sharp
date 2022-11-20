@@ -2,7 +2,6 @@
 
 public interface IUnitOfWork
 {
-    public ITestRepository TestRepository { get; }
     
     public IAuthorRepository AuthorRepository { get; }
     public IBookAuthorRepository BookAuthorRepository { get; }

@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class BookCategoryService : ControllerBase
 {
     private readonly IBookCategoryService _bookCategoryService;
@@ -11,7 +12,7 @@ public class BookCategoryService : ControllerBase
     public BookCategoryService(IBookCategoryService bookCategoryService)
         => _bookCategoryService = bookCategoryService;
     
-    [HttpPost("AddBookCategory")]
+    [HttpPost]
     public async Task<IActionResult> AddBookCategoryAsync([FromBody] BookCategoryRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class BookCategoryService : ControllerBase
         }
     }
 
-    [HttpPut("UpdateBookCategory")]
+    [HttpPut]
     public async Task<IActionResult> UpdateBookCategoryAsync([FromBody] BookCategoryRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class BookCategoryService : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteBookCategory/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBookCategoryAsync(int id)
     {
         try
@@ -54,27 +55,12 @@ public class BookCategoryService : ControllerBase
         }
     }
 
-    [HttpGet("GetBookCategory/{id}")]
-    public async Task<IActionResult> GetBookCategoryById(int id)
+    [HttpGet("GetAllByBookId/{bookId}")]
+    public async Task<IActionResult> GetAllByBookIdAsync(int bookId)
     {
         try
         {
-            var result = await _bookCategoryService.GetByIdAsync(id);
-
-            return Ok(result);
-        }
-        catch (Exception e)
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
-        }
-    }
-
-    [HttpGet("GetBookCategory")]
-    public async Task<IActionResult> GetAllAsync()
-    {
-        try
-        {
-            var results = await _bookCategoryService.GetAllAsync();
+            var results = await _bookCategoryService.GetAllCategoriesByBookIdAsync(bookId, null);
             return Ok(results);
         }
         catch (Exception e)

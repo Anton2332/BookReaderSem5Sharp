@@ -3,7 +3,9 @@ using BLL2.DTO.Request;
 using BLL2.DTO.Response;
 using BLL2.Interfaces;
 using DAL2.Entitys;
+using DAL2.Helpers;
 using DAL2.Interfaces;
+using DAL2.Models;
 
 namespace BLL2.Services;
 
@@ -18,11 +20,12 @@ public class BookService : IBookService
         _mapper = mapper;
     }
 
-    public async Task AddAsync(BookRequestDTO authorRequestDto)
+    public async Task<int> AddAsync(BookRequestDTO authorRequestDto)
     {
         var item = _mapper.Map<BookRequestDTO, Book>(authorRequestDto);
-        await _unitOfWork.BookRepository.AddAsync(item);
+        var id = await _unitOfWork.BookRepository.AddAsync(item);
         await _unitOfWork.SaveChangesAsync();
+        return id;
     }
 
     public async Task UpdateAsync(BookRequestDTO authorRequestDto)
@@ -48,5 +51,12 @@ public class BookService : IBookService
     {
         var result = await _unitOfWork.BookRepository.GetByIdAsync(id);
         return _mapper.Map<Book, BookResponseDTO>(result);
+    }
+
+    public async Task<Page<BookResponseDTO>> GetPagedBooksAsync(QueryStringParameters query)
+    {
+        var results = await _unitOfWork.BookRepository.GetPagedBooksAsync(query);
+        return new Page<BookResponseDTO>(results.Items?.Select(_mapper.Map<Book, BookResponseDTO>),
+            results.TotalItemCount);
     }
 }

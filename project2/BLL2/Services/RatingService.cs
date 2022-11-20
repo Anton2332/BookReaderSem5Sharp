@@ -49,4 +49,14 @@ public class RatingService : IRatingService
         var result = await _unitOfWork.RatingRepository.GetByIdAsync(id);
         return _mapper.Map<Rating, RatingResponseDTO>(result);
     }
+
+    public async Task<int> GetBallByBookIdAsync(int bookId)
+    {
+        return await _unitOfWork.RatingRepository.GetBallByBookIdAsync(bookId);
+    }
+
+    public async Task<int> GetCountOfBallsBookIdAsync(int bookId)
+    {
+        return await _unitOfWork.RatingRepository.GetCountOfBallsByBookIdAsync(bookId);
+    }
 }

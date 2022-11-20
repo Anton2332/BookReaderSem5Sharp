@@ -1,0 +1,12 @@
+D:\study\5_semester\C#\projects\BookReader\SharedProject\bin\Debug\net6.0\SharedProject.deps.json
+D:\study\5_semester\C#\projects\BookReader\SharedProject\bin\Debug\net6.0\SharedProject.dll
+D:\study\5_semester\C#\projects\BookReader\SharedProject\bin\Debug\net6.0\SharedProject.pdb
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\SharedProject.csproj.AssemblyReference.cache
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\SharedProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\SharedProject.AssemblyInfoInputs.cache
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\SharedProject.AssemblyInfo.cs
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\SharedProject.csproj.CoreCompileInputs.cache
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\SharedProject.dll
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\refint\SharedProject.dll
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\SharedProject.pdb
+D:\study\5_semester\C#\projects\BookReader\SharedProject\obj\Debug\net6.0\ref\SharedProject.dll

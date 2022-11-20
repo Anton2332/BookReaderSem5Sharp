@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class BookTagController : ControllerBase
 {
     private readonly IBookTagService _bookTagService;
@@ -11,7 +12,7 @@ public class BookTagController : ControllerBase
     public BookTagController(IBookTagService bookTagService)
         => _bookTagService = bookTagService;
     
-    [HttpPost("AddBookTag")]
+    [HttpPost]
     public async Task<IActionResult> AddBookTagAsync([FromBody] BookTagRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class BookTagController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateBookTag")]
+    [HttpPut]
     public async Task<IActionResult> UpdateBookTagAsync([FromBody] BookTagRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class BookTagController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteBookTag/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBookTagAsync(int id)
     {
         try
@@ -54,7 +55,7 @@ public class BookTagController : ControllerBase
         }
     }
 
-    [HttpGet("GetBookTag/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetBookTagById(int id)
     {
         try
@@ -69,7 +70,7 @@ public class BookTagController : ControllerBase
         }
     }
 
-    [HttpGet("GetBookTags")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try
@@ -82,4 +83,20 @@ public class BookTagController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
         }
     }
+    
+    [HttpGet("GetAllByBookId/{bookId}")]
+    public async Task<IActionResult> GetAllByBookIdAsync(int bookId)
+    {
+        try
+        {
+            var results = await _bookTagService.GetAllTagsByBookIdAsync(bookId, null);
+            return Ok(results);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
+    
+    
 }

@@ -10,4 +10,6 @@ public interface IBookTagService
     Task DeleteAsync(int id);
     Task<IEnumerable<BookTagResponseDTO>> GetAllAsync();
     Task<BookTagResponseDTO> GetByIdAsync(int id);
+
+    Task<IEnumerable<BookTagResponseDTO>> GetAllTagsByBookIdAsync(int bookId, string? orderBy);
 }

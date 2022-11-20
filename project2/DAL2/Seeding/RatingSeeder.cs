@@ -8,7 +8,7 @@ public class RatingSeeder : ISeeder<Rating>
 {
     private readonly List<Rating> _ratings = new()
     {
-
+        
     };
 
     public void Seed(EntityTypeBuilder<Rating> builder) => builder.HasData(_ratings);

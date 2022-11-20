@@ -273,6 +273,95 @@ namespace DAL2.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Authors",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Сергій Жадан" },
+                    { 2, "Грицак Ярослав" },
+                    { 3, "Дал Роальд" },
+                    { 4, "Дашвар Люко" },
+                    { 5, "Дочинець Мирослав" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Ethnic & Cultural" },
+                    { 2, "Europe" },
+                    { 3, "Historical" },
+                    { 4, "Military" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Languages",
+                columns: new[] { "Id", "Abbreviated", "Name" },
+                values: new object[] { 1, "UKR", "Ukraine" });
+
+            migrationBuilder.InsertData(
+                table: "Status",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "finished" },
+                    { 2, "to throw" },
+                    { 3, "continues" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "Description", "Image", "LanguageId", "Name", "StatusId" },
+                values: new object[,]
+                {
+                    { 1, "Text for first book", new byte[0], 1, "First book", 1 },
+                    { 2, "Text for second book", new byte[0], 1, "Second book", 2 },
+                    { 3, "Text for 3 book", new byte[0], 1, "3 book", 2 },
+                    { 4, "Text for 4 book", new byte[0], 1, "4 book", 3 },
+                    { 5, "Text for 5 book", new byte[0], 1, "5 book", 1 },
+                    { 6, "Text for 6 book", new byte[0], 1, "6 book", 2 },
+                    { 7, "Text for 7 book", new byte[0], 1, "7 book", 3 },
+                    { 8, "Text for 8 book", new byte[0], 1, "8 book", 2 },
+                    { 9, "Text for 9 book", new byte[0], 1, "9 book", 1 },
+                    { 10, "Text for 10 book", new byte[0], 1, "10 book", 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "BookAuthors",
+                columns: new[] { "Id", "AuthorId", "BookId" },
+                values: new object[,]
+                {
+                    { 1, 1, 1 },
+                    { 2, 3, 1 },
+                    { 3, 2, 2 },
+                    { 4, 4, 4 },
+                    { 5, 2, 5 },
+                    { 6, 1, 6 },
+                    { 7, 1, 7 },
+                    { 8, 3, 8 },
+                    { 9, 1, 9 },
+                    { 10, 4, 10 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "BookCategories",
+                columns: new[] { "Id", "BookId", "CategoryId" },
+                values: new object[,]
+                {
+                    { 1, 1, 1 },
+                    { 2, 1, 3 },
+                    { 3, 2, 2 },
+                    { 4, 4, 4 },
+                    { 5, 5, 2 },
+                    { 6, 6, 1 },
+                    { 7, 7, 1 },
+                    { 8, 8, 3 },
+                    { 9, 9, 1 },
+                    { 10, 10, 4 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Authors_Name",
                 table: "Authors",

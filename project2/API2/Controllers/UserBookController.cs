@@ -3,7 +3,8 @@ using BLL2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API2.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class UserBookController : ControllerBase
 {
     private readonly IUserBookService _userBookService;
@@ -11,7 +12,7 @@ public class UserBookController : ControllerBase
     public UserBookController(IUserBookService userBookService)
         => _userBookService = userBookService;
     
-    [HttpPost("AddUserBook")]
+    [HttpPost]
     public async Task<IActionResult> AddTagAsync([FromBody] UserBookRequestDTO requestDto)
     {
         try
@@ -25,7 +26,7 @@ public class UserBookController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateUserBook")]
+    [HttpPut]
     public async Task<IActionResult> UpdateTagAsync([FromBody] UserBookRequestDTO requestDto)
     {
         try
@@ -39,7 +40,7 @@ public class UserBookController : ControllerBase
         }
     }
 
-    [HttpDelete("DeleteUserBook/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTagAsync(string id)
     {
         try
@@ -54,7 +55,7 @@ public class UserBookController : ControllerBase
         }
     }
 
-    [HttpGet("GetUserBook/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetTagById(string id)
     {
         try
@@ -69,7 +70,7 @@ public class UserBookController : ControllerBase
         }
     }
 
-    [HttpGet("GetUsersBook")]
+    [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
         try
