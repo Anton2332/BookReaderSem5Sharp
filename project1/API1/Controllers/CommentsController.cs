@@ -17,7 +17,7 @@ public class CommentsController : ControllerBase
         _commentsService = commentsService;
     }
 
-    [HttpGet("GetAllCommentsByBookId")]
+    [HttpGet("GetAllCommentsByBookId/{bookId}")]
     public async Task<ActionResult<IEnumerable<CommentsResponsDTO>>> GetAllByBookId(int bookId)
     {
         try
@@ -31,7 +31,7 @@ public class CommentsController : ControllerBase
         }
     }
 
-    [HttpGet("GetAllRepliesByCommentId")]
+    [HttpGet("GetAllRepliesByCommentId/{commentId}")]
     public async Task<ActionResult<IEnumerable<CommentsResponsDTO>>> GetAllRepliesByCommentId(int commentId)
     {
         try
@@ -45,7 +45,7 @@ public class CommentsController : ControllerBase
         }
     }
 
-    [HttpPost("AddComment")]
+    [HttpPost]
     public async Task<ActionResult> AddComment([FromBody] CommentsRequestDTO comment)
     {
         try
@@ -59,7 +59,7 @@ public class CommentsController : ControllerBase
         }
     }
 
-    [HttpPut("UpdateComment")]
+    [HttpPut]
     public async Task<ActionResult> UpdateComment(CommentsRequestDTO comment)
     {
         try
@@ -73,7 +73,7 @@ public class CommentsController : ControllerBase
         }
     }
     
-    [HttpDelete("DeleteComment")]
+    [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteComment(int id)
     {
         try

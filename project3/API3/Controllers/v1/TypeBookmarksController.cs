@@ -15,7 +15,7 @@ namespace API3.Controllers.v1;
 [Route("[controller]")]
 public class TypeBookmarksController : BaseController
 {
-    [HttpPost("AddTypeBookmark")]
+    [HttpPost]
     public async Task<IActionResult> CreatTypeBookmark([FromBody] TypeBookmarkDTO createTypeBookmarkDto)
     {
         var result = await Mediator.Send(new CreateTypeBookmarkCommand()
@@ -37,7 +37,7 @@ public class TypeBookmarksController : BaseController
         return Ok(results);
     }
 
-    [HttpPut("UpdateTypeBookmark/{id}")]
+    [HttpPut("{id}")]
     public async Task<ActionResult<bool>> UpdateTypeBookmark([FromBody] TypeBookmarkDTO updateTypeBookmarkDto, int id)
     {
         var result = await Mediator.Send(new UpdateTypeBookmarkCommand()

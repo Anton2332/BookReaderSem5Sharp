@@ -15,12 +15,12 @@ public class CommentLikesController : ControllerBase
         _commentsLikesService = commentsLikesService;
     }
 
-    [HttpGet("GetCountLikesByCommentIdAsync")]
-    public async Task<ActionResult<IEnumerable<int>>> GetCountLikesByCommentId(int id)
+    [HttpGet("GetCountLikesByCommentId/{commentId}")]
+    public async Task<ActionResult<IEnumerable<int>>> GetCountLikesByCommentId(int commentId)
     {
         try
         {
-            var result = await _commentsLikesService.CountLikesByCommentIdAsync(id);
+            var result = await _commentsLikesService.CountLikesByCommentIdAsync(commentId);
             return Ok(result);
         }
         catch (Exception ex)
@@ -29,12 +29,12 @@ public class CommentLikesController : ControllerBase
         }
     }
     
-    [HttpGet("GetCountDislikeByCommentIdAsync")]
-    public async Task<ActionResult<IEnumerable<int>>> GetCountDislikeByCommentId(int id)
+    [HttpGet("GetCountDislikeByCommentId/{commentId}")]
+    public async Task<ActionResult<IEnumerable<int>>> GetCountDislikeByCommentId(int commentId)
     {
         try
         {
-            var result = await _commentsLikesService.CountDislikesByCommentIdAsync(id);
+            var result = await _commentsLikesService.CountDislikesByCommentIdAsync(commentId);
             return Ok(result);
         }
         catch (Exception ex)

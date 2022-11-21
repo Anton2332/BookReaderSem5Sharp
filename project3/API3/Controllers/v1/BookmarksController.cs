@@ -14,7 +14,7 @@ namespace API3.Controllers.v1;
 [Route("[controller]")]
 public class BookmarksController : BaseController
 {
-    [HttpPost("AddBookmark")]
+    [HttpPost]
     public async Task<IActionResult> CreateBookmark([FromBody] CreateBookmarkDTO createBookmarkDto)
     {
         var result = await Mediator.Send(new CreateBookmarkCommand()
@@ -36,7 +36,7 @@ public class BookmarksController : BaseController
         return Ok(results);
     }
 
-    [HttpPut("UpdateBookmark/{id}")]
+    [HttpPut("{id}")]
     public async Task<ActionResult<bool>> UpdateBookmark([FromBody] UpdateBookmarkDTO updateBookmarkDto, int id)
     {
         var result = await Mediator.Send(new UpdateBookmarkCommand()
@@ -48,7 +48,7 @@ public class BookmarksController : BaseController
         return Ok(result);
     }
 
-    [HttpDelete("DeleteBookmark/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBookmark(int id)
     {
         var result = await Mediator.Send(new DeleteBookmarkCommand()
@@ -59,7 +59,7 @@ public class BookmarksController : BaseController
         return Ok(result);
     }
 
-    [HttpGet("GetBookmark/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetGetBookmarkById(int id)
     {
         var result = await Mediator.Send(new GetBookmarkQuery()

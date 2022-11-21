@@ -15,7 +15,7 @@ namespace API3.Controllers.v1;
 [Route("[controller]")]
 public class NotificationController : BaseController
 {
-    [HttpPost("AddNotification")]
+    [HttpPost]
     public async Task<IActionResult> CreateNotification([FromBody] CreateNotificationDTO createNotificationDto)
     {
         var result = await Mediator.Send(new CreateNotificationCommand()
@@ -38,7 +38,7 @@ public class NotificationController : BaseController
         return Ok(results);
     }
 
-    [HttpPut("UpdateNotificatoin/{id}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateNotification([FromBody] NotificationDTO updateNotificationDto, int id)
     {
         var result = await Mediator.Send(new UpdateNotificationCommand()
@@ -50,7 +50,7 @@ public class NotificationController : BaseController
         return Ok(result);
     }
 
-    [HttpDelete("DeleteNotification/{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteNotification(int id)
     {
         var result = await Mediator.Send(new DeleteNotificationCommand()
@@ -61,7 +61,7 @@ public class NotificationController : BaseController
         return Ok(result);
     }
 
-    [HttpGet("GetNotification/{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetNotificationById(int id)
     {
         var result = await Mediator.Send(new GetNotificationQuery()
