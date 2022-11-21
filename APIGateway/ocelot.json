@@ -1,5 +1,110 @@
 ﻿{
   "Routes": [
+    
+    //Comment Api
+
+    {
+      "DownstreamPathTemplate": "/api/Comments",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/Comment",
+      "UpstreamHttpMethod": ["POST", "PUT"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Comments/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+        "Host": "localhost",
+        "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/Comment/{id}",
+      "UpstreamHttpMethod": ["DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Comments/GetAllRepliesByCommentId/{commentId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/Comment/GetByCommentId/{commentId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Comments/GetAllCommentsByBookId/{bookId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/Comment/GetByBookId/{bookId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CommentLikes/GetCountLikesByCommentId/{commentId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/CommentLike/CountLikeByCommentId/{commentId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CommentLikes/GetCountDislikeByCommentId/{commentId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/CommentLike/CountDislikeByCommentId/{commentId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CommentLikes/Like",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/CommentLike/Like",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/CommentLikes/Dislike",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5113"
+        }
+      ],
+      "UpstreamPathTemplate": "/CommentLike/Dislike",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    
+    //Book Api
+    
+    
+    
+    
     //TypeBookmark Api
     {
       "DownstreamPathTemplate": "/TypeBookmarks/{id}",
@@ -11,7 +116,115 @@
         }
       ],
       "UpstreamPathTemplate": "/TypeBookmark/{id}",
-      "UpstreamHttpMethod": ["GET", "DELETE"]
+      "UpstreamHttpMethod": ["GET", "DELETE", "PUT"]
+    },
+    {
+      "DownstreamPathTemplate": "/TypeBookmarks",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/TypeBookmark",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/TypeBookmarks/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/TypeBookmark/{id}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/TypeBookmarks/GetTypeBookmarksByUserId/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/TypeBookmark/GetTypeBookmarksByUserId/{userId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/Bookmarks/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/Bookmark/{id}",
+      "UpstreamHttpMethod": ["GET", "DELETE", "PUT"]
+    },
+    {
+      "DownstreamPathTemplate": "/Bookmarks/GetBookmarks",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/Bookmark/GetBookmarks",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/Bookmarks/GetBookmarkByTypeBookmarkId/{typeBookmarkId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/Bookmark/GetBookmarkByTypeBookmarkId/{typeBookmarkId}",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/Notification/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/Notification/{id}",
+      "UpstreamHttpMethod": ["GET", "DELETE", "PUT"]
+    },
+    {
+      "DownstreamPathTemplate": "/Notification/GetNotifications/{isRead}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/Notification/GetNotifications/{isRead}",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/Notification/GetNotificationByBookmarkId/{bookmarkId}/{isRead}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5172"
+        }
+      ],
+      "UpstreamPathTemplate": "/Notification/GetNotificationByBookmarkId/{bookmarkId}/{isRead}",
+      "UpstreamHttpMethod": ["POST"]
     }
   ],
   "GlobalConfiguration": {
