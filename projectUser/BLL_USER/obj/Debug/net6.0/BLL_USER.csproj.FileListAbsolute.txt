@@ -1,0 +1,15 @@
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\bin\Debug\net6.0\BLL_USER.deps.json
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\bin\Debug\net6.0\BLL_USER.dll
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\bin\Debug\net6.0\BLL_USER.pdb
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\bin\Debug\net6.0\DAL_USER.dll
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\bin\Debug\net6.0\DAL_USER.pdb
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.csproj.AssemblyReference.cache
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.AssemblyInfoInputs.cache
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.AssemblyInfo.cs
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.csproj.CoreCompileInputs.cache
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.csproj.CopyComplete
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.dll
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\refint\BLL_USER.dll
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\BLL_USER.pdb
+D:\study\5_semester\C#\projects\BookReader\projectUser\BLL_USER\obj\Debug\net6.0\ref\BLL_USER.dll

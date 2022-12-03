@@ -1,0 +1,14 @@
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\bin\Debug\net6.0\DAL_USER.deps.json
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\bin\Debug\net6.0\DAL_USER.runtimeconfig.json
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\bin\Debug\net6.0\DAL_USER.dll
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\bin\Debug\net6.0\DAL_USER.pdb
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.csproj.AssemblyReference.cache
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.AssemblyInfoInputs.cache
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.AssemblyInfo.cs
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.csproj.CoreCompileInputs.cache
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.dll
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\refint\DAL_USER.dll
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.pdb
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\DAL_USER.genruntimeconfig.cache
+D:\study\5_semester\C#\projects\BookReader\projectUser\DAL_USER\obj\Debug\net6.0\ref\DAL_USER.dll
