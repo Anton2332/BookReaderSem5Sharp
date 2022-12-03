@@ -109,4 +109,18 @@ public class BookController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
         }
     }
+    
+    [HttpGet("GetMostPopularBooks")]
+    public async Task<IActionResult> GetMostPopularBooksAsync()
+    {
+        try
+        {
+            var results = await _bookService.GetMostPopularBooksAsync();
+            return Ok(results);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
 }

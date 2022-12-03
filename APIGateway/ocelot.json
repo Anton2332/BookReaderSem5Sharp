@@ -101,9 +101,495 @@
     },
     
     //Book Api
+
+    {
+      "DownstreamPathTemplate": "/api/Author",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Author",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Author/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Author/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Author/GetAuthorsWithoutIds",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Author/GetAuthorsWithoutIds",
+      "UpstreamHttpMethod": ["POST"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/BookAuthor",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookAuthor",
+      "UpstreamHttpMethod": ["POST", "PUT"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BookAuthor/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookAuthor/{id}",
+      "UpstreamHttpMethod": ["DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BookAuthor/GetAllByBookId/{bookId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookAuthor/GetAllByBookId/{bookId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/BookCategory",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookCategory",
+      "UpstreamHttpMethod": ["POST", "PUT"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BookCategory/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookCategory/{id}",
+      "UpstreamHttpMethod": ["DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BookCategory/GetAllByBookId/{bookId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookCategory/GetAllByBookId/{bookId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
     
     
     
+    //BookController 
+    {
+      "DownstreamPathTemplate": "/api/Book",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Book",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Book/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Book/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Book/GetPagedBooks",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Book/GetPagedBooks",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Book/GetMostPopularBooks",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Book/GetMostPopularBooks",
+      "UpstreamHttpMethod": ["GET"],
+      "Key": "MostPopularBooks"
+    },
+
+
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/BookTag",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookTag",
+      "UpstreamHttpMethod": ["POST", "PUT"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BookTag/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookTag/{id}",
+      "UpstreamHttpMethod": ["DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/BookTag/GetAllByBookId/{bookId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/BookTag/GetAllByBookId/{bookId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Category",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Category",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Category/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Category/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Category/GetCategoriesWithoutIds",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Category/GetCategoriesWithoutIds",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    
+    
+    
+    //Chapter Controller
+    {
+      "DownstreamPathTemplate": "/api/Chapter",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Chapter",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Chapter/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Chapter/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Chapter/GetAllByBookId/{bookId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Chapter/GetAllByBookId/{bookId}",
+      "UpstreamHttpMethod": [ "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Chapter/GetCountByBookId/{bookId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Chapter/GetCountByBookId/{bookId}",
+      "UpstreamHttpMethod": [ "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Chapter/GetLastChapters",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Chapter/GetLastChapters",
+      "UpstreamHttpMethod": [ "GET"],
+      "Key": "LastChapters"
+    },
+    
+
+
+    {
+      "DownstreamPathTemplate": "/api/Language",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Language",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Language/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Language/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+    
+    
+    
+    //Page Controller
+    {
+      "DownstreamPathTemplate": "/api/Page",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Page",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Page/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Page/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Page/GetAllByChapterId/{chapterId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Page/GetAllByChapterId/{chapterId}",
+      "UpstreamHttpMethod": ["GET"]
+    },
+
+
+
+    {
+      "DownstreamPathTemplate": "/api/Rating",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Rating",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Rating/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Rating/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Status",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Status",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Status/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Status/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Tag",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Tag",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tag/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Tag/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Tag/GetTagsWithoutIds",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/Tag/GetTagsWithoutIds",
+      
+      "UpstreamHttpMethod": ["POST"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/UserBook",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/UserBook",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/UserBook/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5254"
+        }
+      ],
+      "UpstreamPathTemplate": "/UserBook/{id}",
+      "UpstreamHttpMethod": ["DELETE", "GET"]
+    },
     
     //TypeBookmark Api
     {
@@ -119,7 +605,7 @@
       "UpstreamHttpMethod": ["GET", "DELETE", "PUT"]
     },
     {
-      "DownstreamPathTemplate": "/TypeBookmarks",
+      "DownstreamPathTemplate": "/TypeBookmarks/GetTypeBookmarks",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -127,20 +613,8 @@
           "Port": "5172"
         }
       ],
-      "UpstreamPathTemplate": "/TypeBookmark",
+      "UpstreamPathTemplate": "/TypeBookmark/GetTypeBookmarks",
       "UpstreamHttpMethod": ["POST"]
-    },
-    {
-      "DownstreamPathTemplate": "/TypeBookmarks/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "5172"
-        }
-      ],
-      "UpstreamPathTemplate": "/TypeBookmark/{id}",
-      "UpstreamHttpMethod": ["GET"]
     },
     {
       "DownstreamPathTemplate": "/TypeBookmarks/GetTypeBookmarksByUserId/{userId}",
@@ -225,6 +699,17 @@
       ],
       "UpstreamPathTemplate": "/Notification/GetNotificationByBookmarkId/{bookmarkId}/{isRead}",
       "UpstreamHttpMethod": ["POST"]
+    }
+    
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "MostPopularBooks",
+        "LastChapters"
+      ],
+      "UpstreamPathTemplate": "/",
+      "Aggregator": "MainPageAggregator"
     }
   ],
   "GlobalConfiguration": {

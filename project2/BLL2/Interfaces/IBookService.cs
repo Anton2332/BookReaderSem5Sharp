@@ -13,4 +13,5 @@ public interface IBookService
     Task<IEnumerable<BookResponseDTO>> GetAllAsync();
     Task<BookResponseDTO> GetByIdAsync(int id);
     Task<Page<BookResponseDTO>> GetPagedBooksAsync(QueryStringParameters query);
+    Task<IEnumerable<BookResponseDTO>> GetMostPopularBooksAsync();
 }

@@ -8,7 +8,7 @@ public class PageRepository : GenericRepository<Page>, IPageRepository
 {
     public PageRepository(DBContext dbContext) : base(dbContext) {}
     
-    public async Task<IEnumerable<Page>> GetAllPagesByBookIdAsync(int chapterId)
+    public async Task<IEnumerable<Page>> GetAllPagesByChapterIdAsync(int chapterId)
     {
         var query = Items.Where(x => x.ChapterId == chapterId);
         return await query.ToListAsync();

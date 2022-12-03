@@ -70,3 +70,7 @@ D:\study\5_semester\C#\projects\BookReader\project3\API3\obj\Debug\net6.0\refint
 D:\study\5_semester\C#\projects\BookReader\project3\API3\obj\Debug\net6.0\API3.pdb
 D:\study\5_semester\C#\projects\BookReader\project3\API3\obj\Debug\net6.0\API3.genruntimeconfig.cache
 D:\study\5_semester\C#\projects\BookReader\project3\API3\obj\Debug\net6.0\ref\API3.dll
+D:\study\5_semester\C#\projects\BookReader\project3\API3\bin\Debug\net6.0\Google.Protobuf.dll
+D:\study\5_semester\C#\projects\BookReader\project3\API3\bin\Debug\net6.0\Grpc.Core.Api.dll
+D:\study\5_semester\C#\projects\BookReader\project3\API3\bin\Debug\net6.0\Grpc.Net.Client.dll
+D:\study\5_semester\C#\projects\BookReader\project3\API3\bin\Debug\net6.0\Grpc.Net.Common.dll

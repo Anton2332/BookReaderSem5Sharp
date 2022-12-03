@@ -59,4 +59,11 @@ public class BookService : IBookService
         return new Page<BookResponseDTO>(results.Items?.Select(_mapper.Map<Book, BookResponseDTO>),
             results.TotalItemCount);
     }
+    
+    public async Task<IEnumerable<BookResponseDTO>> GetMostPopularBooksAsync()
+    {
+        var ids = await _unitOfWork.RatingRepository.GetMostPopularBookIdAsync();
+        var results = await _unitOfWork.BookRepository.GetBooksByIdsAsync(ids);
+        return results?.Select(_mapper.Map<Book, BookResponseDTO>);
+    }
 }

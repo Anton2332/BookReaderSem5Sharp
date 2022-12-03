@@ -61,7 +61,6 @@ public class ChapterController : ControllerBase
         try
         {
             var result = await _chapterService.GetByIdAsync(id);
-
             return Ok(result);
         }
         catch (Exception e)
@@ -83,4 +82,47 @@ public class ChapterController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
         }
     }
+    
+    [HttpGet("GetAllByBookId/{bookId}")]
+    public async Task<IActionResult> GetAllChapterByBookIdAsync(int bookId)
+    {
+        try
+        {
+            var result = await _chapterService.GetAllByBookIdAsync(bookId);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
+
+    [HttpGet("GetCountByBookId/{bookId}")]
+    public async Task<IActionResult> GetCountChapterByBookIdAsync(int bookId)
+    {
+        try
+        {
+            var result = await _chapterService.GetCountChapterByCountIdAsync(bookId);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
+    
+    [HttpGet("GetLastChapters")]
+    public async Task<IActionResult> GetLastChapters()
+    {
+        try
+        {
+            var results = await _chapterService.GetLastChapterAsync();
+            return Ok(results);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
+
 }

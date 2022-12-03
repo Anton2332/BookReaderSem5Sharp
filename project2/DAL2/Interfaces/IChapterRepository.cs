@@ -7,4 +7,5 @@ public interface IChapterRepository : IRepository<Chapter>
     Task<IEnumerable<Chapter>> GetAllChaptersByBookIdAsync(int bookId);
 
     Task<int> GetCountOfChaptersByBookIdAsync(int bookId);
+    Task<IEnumerable<Chapter>> GetLastChaptersAsync();
 }

@@ -78,3 +78,10 @@ D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Shared
 D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\FluentValidation.dll
 D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Google.Protobuf.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Grpc.Core.Api.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Grpc.Net.Client.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+D:\study\5_semester\C#\projects\BookReader\project2\API2\bin\Debug\net6.0\Grpc.Net.Common.dll

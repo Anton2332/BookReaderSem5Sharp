@@ -19,4 +19,10 @@ public class ChapterRepository : GenericRepository<Chapter>, IChapterRepository
         var result = await GetAllChaptersByBookIdAsync(bookId);
         return result.Count();
     }
+
+    public async Task<IEnumerable<Chapter>> GetLastChaptersAsync()
+    {
+        var results = await Items.OrderBy(ch => ch.PublishDateTime).Take(50).ToListAsync();
+        return results;
+    }
 }

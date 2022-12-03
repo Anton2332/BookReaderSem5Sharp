@@ -13,6 +13,9 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Autofac.Extensions.DependencyInjection": "8.0.0",
           "FluentValidation.DependencyInjectionExtensions": "11.2.2",
+          "Google.Protobuf": "3.21.10",
+          "Grpc.Net.Client": "2.50.0",
+          "Grpc.Tools": "2.51.0-pre1",
           "Infrastructure": "1.0.0",
           "MediatR": "11.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.0.0",
@@ -104,6 +107,49 @@
           }
         }
       },
+      "Google.Protobuf/3.21.10": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.21.10.0",
+            "fileVersion": "3.21.10.0"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.50.0": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.50.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.50.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.50.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0-rc.2.22472.3"
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Client.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.50.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.50.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.50.0"
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.50.0.0"
+          }
+        }
+      },
+      "Grpc.Tools/2.51.0-pre1": {},
       "MediatR/11.0.0": {
         "dependencies": {
           "MediatR.Contracts": "1.0.1"
@@ -477,6 +523,7 @@
           }
         }
       },
+      "System.Memory/4.5.3": {},
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Security.AccessControl/5.0.0": {
         "dependencies": {
@@ -593,6 +640,41 @@
       "sha512": "sha512-4JFJec9ILLax7vrVN7S6mVzlvc2Lwqu0lN3yl0LUoNVsJ8m1QB/twif/DX05EG+pYD83SWJ07wQ65WePGu2iGg==",
       "path": "fluentvalidation.dependencyinjectionextensions/11.2.2",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512"
+    },
+    "Google.Protobuf/3.21.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9KnY/4N1pZkfoLv8Ozho3Tf8ms09YGX1UuURqXXidAhTP/FvIHwbon8VhX4Zmxb0YrOc/aVWYMgEimBwjbWCGg==",
+      "path": "google.protobuf/3.21.10",
+      "hashPath": "google.protobuf.3.21.10.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.50.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ECZr0AqUobCIfxPYm07D/IqMbGd+Vu9KquRLLY1kMzc/xWZdqqiK0jA6t6Y5gate3lV4EiH53cvfcb6anritQg==",
+      "path": "grpc.core.api/2.50.0",
+      "hashPath": "grpc.core.api.2.50.0.nupkg.sha512"
+    },
+    "Grpc.Net.Client/2.50.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FEQ4KdsIlknEH/8z64Im5soEdVYsHBShIGSS3CUS+KXxdtL6/uNhYx4CBE+SXoGofvetwR/dW9QGmBXu3v+enQ==",
+      "path": "grpc.net.client/2.50.0",
+      "hashPath": "grpc.net.client.2.50.0.nupkg.sha512"
+    },
+    "Grpc.Net.Common/2.50.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xRoZfo74Cgrr/c/4Y6YCyCiKxz5JLMAi8c9nPhy1vrNXvNjj2Sdd/kSySi9VlZZbMHoDBTcn5ZlPumDPDirnHw==",
+      "path": "grpc.net.common/2.50.0",
+      "hashPath": "grpc.net.common.2.50.0.nupkg.sha512"
+    },
+    "Grpc.Tools/2.51.0-pre1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LuIsqdSTKK6tQ7c7or7/5yDVIKXR6btwAHn66xqo7SiwllMH3OtLTIfLNJn5sqmHMoj8/gAK+ZvtCfT1PUFbwQ==",
+      "path": "grpc.tools/2.51.0-pre1",
+      "hashPath": "grpc.tools.2.51.0-pre1.nupkg.sha512"
     },
     "MediatR/11.0.0": {
       "type": "package",
@@ -880,6 +962,13 @@
       "sha512": "sha512-XUyKBxWlVhrLxbiZWJ7ThBuDnQ/xwu9czKdPbM0gMXMrhRG4l+8ty8+Ffvmu3tlTP2r7pXvZEi5VVdzVfeji4g==",
       "path": "system.linq.dynamic.core/1.2.21",
       "hashPath": "system.linq.dynamic.core.1.2.21.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",

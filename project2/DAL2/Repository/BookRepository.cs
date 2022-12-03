@@ -32,4 +32,11 @@ public class BookRepository : GenericRepository<Book>, IBookRepository
         var result = await items.ToPagedAsync(queryStringParameters);
         return result;
     }
+
+    public async Task<IEnumerable<Book>> GetBooksByIdsAsync(List<int> ids)
+    {
+        var results = await Items.Where(b => ids.Contains(b.Id)).ToListAsync();
+
+        return results;
+    }
 }

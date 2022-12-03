@@ -45,6 +45,16 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.50.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.51.0-pre1, )"
+            },
             "MassTransit": {
               "target": "Package",
               "version": "[8.0.9-develop.658, )"

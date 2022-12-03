@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Wl29MZc1tb69RA4JS5HpnKG3db00G8rZR50Mhbz5rTDepQ7RYjlowYTYUtJylrlN1k5JX+mvAVn/zumTMhyn4w==",
+  "dgSpecHash": "1BsAwKlfvf8otIeQf+GK8ESnH8yuwkkHaA0paZvQigIE9wgnEYdyRl8TRjnfKtnkOU/d0dQZKKD8UT/ofWBCHw==",
   "success": true,
   "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project3\\API3\\API3.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,11 @@
     "C:\\Users\\anton\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\google.protobuf\\3.21.10\\google.protobuf.3.21.10.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\grpc.core.api\\2.50.0\\grpc.core.api.2.50.0.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\grpc.net.client\\2.50.0\\grpc.net.client.2.50.0.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\grpc.net.common\\2.50.0\\grpc.net.common.2.50.0.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\grpc.tools\\2.51.0-pre1\\grpc.tools.2.51.0-pre1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
@@ -52,6 +57,7 @@
     "C:\\Users\\anton\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\system.linq.dynamic.core\\1.2.21\\system.linq.dynamic.core.1.2.21.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",

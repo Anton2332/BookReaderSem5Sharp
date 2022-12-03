@@ -10,4 +10,5 @@ public interface IPageService
     Task DeleteAsync(int id);
     Task<IEnumerable<PageResponseDTO>> GetAllAsync();
     Task<PageResponseDTO> GetByIdAsync(int id);
+    Task<IEnumerable<PageResponseDTO>> GetAllByChapterIdAsync(int chapterId);
 }

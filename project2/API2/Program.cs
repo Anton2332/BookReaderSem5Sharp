@@ -34,6 +34,8 @@ var builder = WebApplication.CreateBuilder(args);
 // });
 }
 
+builder.Services.AddGrpc();
+
 builder.Services.AddMassTransit(config =>
 {
     config.UsingRabbitMq((ctx, cfg) =>
@@ -123,6 +125,8 @@ builder.Services.AddMvc(options =>
 
 
 var app = builder.Build();
+
+app.MapGrpcService<API2.Service.BookService>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

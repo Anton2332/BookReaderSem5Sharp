@@ -83,4 +83,19 @@ public class PageController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
         }
     }
+    
+    [HttpGet("GetAllByChapterId/{chapterId}")]
+    public async Task<IActionResult> GetAllByChapterId(int chapterId)
+    {
+        try
+        {
+            var result = await _pageService.GetAllByChapterIdAsync(chapterId);
+
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
 }

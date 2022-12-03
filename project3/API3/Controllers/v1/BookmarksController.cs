@@ -5,6 +5,8 @@ using Application.Bookmark.Queries.GetBookmark;
 using Application.Bookmark.Queries.GetBookmarks;
 using Application.Bookmark.Queries.GetBookmarksByTypeBookmarkId;
 using Domain.QueryMapper;
+using Grpc.Net.Client;
+using GrpcClient;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API3.Controllers.v1;
@@ -14,6 +16,16 @@ namespace API3.Controllers.v1;
 [Route("[controller]")]
 public class BookmarksController : BaseController
 {
+
+    private Book.BookClient _client;
+
+    public BookmarksController()
+    {
+        var grpc = GrpcChannel.ForAddress("https://localhost:7045");
+        var client = new Book.BookClient(grpc);
+        _client = client;
+    }
+    
     [HttpPost]
     public async Task<IActionResult> CreateBookmark([FromBody] CreateBookmarkDTO createBookmarkDto)
     {
@@ -60,7 +72,7 @@ public class BookmarksController : BaseController
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetGetBookmarkById(int id)
+    public async Task<IActionResult> GetBookmarkById(int id)
     {
         var result = await Mediator.Send(new GetBookmarkQuery()
         {
@@ -78,6 +90,24 @@ public class BookmarksController : BaseController
             TypeBookmarkId = typeBookmarkId,
             QueryOptions = options,
         });
+
+        try
+        {
+            foreach (var item in results)
+            {
+                var book_data = _client.GetBookById(new GetBookByIdModel()
+                {
+                    BookId = item.BookId
+                });
+                item.BookDescription = book_data.Description;
+                item.BookName = book_data.Name;
+                Console.WriteLine(book_data.Name);
+            }
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, e.ToString());
+        }
 
         return Ok(results);
     }

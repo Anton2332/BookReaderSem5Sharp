@@ -49,4 +49,22 @@ public class ChapterService : IChapterService
         var result = await _unitOfWork.ChapterRepository.GetByIdAsync(id);
         return _mapper.Map<Chapter, ChapterResponseDTO>(result);
     }
+    
+    public async Task<IEnumerable<ChapterResponseDTO>> GetAllByBookIdAsync(int bookId)
+    {
+        var results = await _unitOfWork.ChapterRepository.GetAllChaptersByBookIdAsync(bookId);
+        return results?.Select(_mapper.Map<Chapter, ChapterResponseDTO>);
+    }
+
+    public async Task<int> GetCountChapterByCountIdAsync(int bookId)
+    {
+        var result = await _unitOfWork.ChapterRepository.GetCountOfChaptersByBookIdAsync(bookId);
+        return result;
+    }
+    
+    public async Task<IEnumerable<ChapterResponseDTO>> GetLastChapterAsync()
+    {
+        var results = await _unitOfWork.ChapterRepository.GetLastChaptersAsync();
+        return results?.Select(_mapper.Map<Chapter, ChapterResponseDTO>);
+    }
 }

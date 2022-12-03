@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API2.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class AuthorController : ControllerBase
 {
     private readonly IAuthorService _authorService;

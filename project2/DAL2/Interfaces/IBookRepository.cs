@@ -12,4 +12,6 @@ public interface IBookRepository : IRepository<Book>
         // BookTag[] tags,
         // bool searchByAllTags,
         QueryStringParameters queryStringParameters);
+
+    Task<IEnumerable<Book>> GetBooksByIdsAsync(List<int> ids);
 }

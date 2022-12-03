@@ -5,6 +5,7 @@ using Infrastructure.Repositories;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using FluentValidation;
+using GrpcClient;
 using Infrastructure.Configuration;
 using Infrastructure.Persistence;
 using MediatR;
