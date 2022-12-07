@@ -7,55 +7,40 @@ namespace DAL1.Repositories;
 
 public class CommentsRepository : GenericRepository<BaseComments>, ICommentsRepository
 {
-    public CommentsRepository(IDbTransaction transaction) : base("comments",  transaction)
+    public CommentsRepository(IDbTransaction transaction) : base("Comments",  transaction)
     {
     }
     
-    public async Task<IEnumerable<Comments>> GetAllByBookIdButNotRepliesAsync(int id)
+    public async Task<IEnumerable<Comments>> GetCommentsByBookIdAsync(int id)
     {
-        var comments = await Connection.QueryAsync<Comments, UserComments, Comments
+        var comments = await Connection.QueryAsync<Comments
         >(
-            "select * from comments c inner join usersComments u on c.userId = u.Id where c.BookId = @Id and c.repliesId = null",
-            (comments, user) =>
-            {
-                comments.User = user;
-                return comments;
-            },
+            "select * from Сomments where BookId = @Id and repliesId = null",
             param:new{Id = id},
             transaction:Transaction);
-
+    
         return comments;
     }
-
+    
     public async Task<IEnumerable<Comments>> GetAllByBookIdAsync(int id)
     {
-        var comments = await Connection.QueryAsync<Comments, UserComments, Comments
+        var comments = await Connection.QueryAsync<Comments
         >(
-            "select * from comments c inner join usersComments u on c.userId = u.Id where c.BookId = @Id",
-            (comments, user) =>
-            {
-                comments.User = user;
-                return comments;
-            },
+            "select * from Comments where BookId = @Id",
             param:new{Id = id},
             transaction:Transaction);
-
+    
         return comments;
     }
     
-    public async Task<IEnumerable<Comments>> GetAllByCommentsIdAsync(int id)
+    public async Task<IEnumerable<Comments>> GetRepliesByCommentsIdAsync(int id)
     {
-        var comments = await Connection.QueryAsync<Comments, UserComments, Comments
+        var comments = await Connection.QueryAsync<Comments
         >(
-            "select * from comments c inner join usersComments u on c.userId = u.Id where c.repliesId = @Id",
-            (comments, user) =>
-            {
-                comments.User = user;
-                return comments;
-            },
+            "select * from Сomments where repliesId = @Id",
             param:new{Id = id},
             transaction:Transaction);
-
+    
         return comments;
     }
 }

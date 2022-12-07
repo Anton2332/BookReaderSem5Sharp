@@ -79,3 +79,4 @@ D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\Rabbit
 D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\System.Text.Json.dll
 D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\SharedProject.dll
 D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\SharedProject.pdb
+D:\study\5_semester\C#\projects\BookReader\project1\API1\bin\Debug\net6.0\MySqlConnector.dll

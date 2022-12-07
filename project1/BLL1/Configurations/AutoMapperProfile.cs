@@ -12,26 +12,17 @@ public class AutoMapperProfile : Profile
     {
         CreateCommentsMaps();
         CreateCommentLikesService();
-        CreateBookCommentsMaps();
     }
 
     private void CreateCommentsMaps()
     {
         CreateMap<Comments, CommentsResponsDTO>();
-            // .ForMember("Firstname", p=>p.MapFrom(c => c.User.Firstname))
-            // .ForMember("Lastname", p => p.MapFrom(c => c.User.Lastname));
         CreateMap<CommentsRequestDTO, BaseComments>();
     }
 
     private void CreateCommentLikesService()
     {
         CreateMap<CommentLikesRequestDTO, CommentLikes>();
-    }
-
-    private void CreateBookCommentsMaps()
-    {
-        CreateMap<BookComments, BookCommentsResponseDTO>();
-        CreateMap<BookCommentsRequestDTO, BookComments>();
     }
 
 }

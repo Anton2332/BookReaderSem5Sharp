@@ -2,6 +2,6 @@
 
 public class Comments : BaseComments
 {
+    public DateTimeOffset CreatedAt { get; set; }
     public int Id { get; set; }
-    public virtual UserComments? User { get; set; }
 }

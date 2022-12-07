@@ -7,18 +7,18 @@ namespace DAL1.Repositories;
 
 public class CommentLikesRepository : GenericRepository<CommentLikes>, ICommentLikesRepository
 {
-    public CommentLikesRepository(IDbTransaction transaction) : base("commentLikes", transaction)
+    public CommentLikesRepository(IDbTransaction transaction) : base("CommentLikes", transaction)
     {
     }
 
     public async Task<int> AddLikeAsync(CommentLikes commentLikes)
     {
         var newId = await Connection.ExecuteScalarAsync<int>(
-            "insert into commentLikes (userId, likeId, commentId) values (@UserId, @LikeId, @CommentId)",
+            "insert into CommentLikes (UserId, IsLike, CommentId) values (@UserId, @IsLike, @CommentId)",
             param: new
             {
                 UserId = commentLikes.UserId,
-                LikeId = commentLikes.LikeId,
+                IsLike = commentLikes.IsLike,
                 CommentId = commentLikes.CommentId
             },
             transaction: Transaction);
@@ -28,7 +28,7 @@ public class CommentLikesRepository : GenericRepository<CommentLikes>, ICommentL
     public async Task<int> GetCountLikesByCommentIdAsync(int id)
     {
         var count = await Connection.QueryAsync<int>(
-            "select Count(*) from commentLikes c inner join likeDislike l on c.likeId = l.id where c.commentId = @Id and l.body = 'like'",
+            "select Count(*) from CommentLikes c where CommentId = @Id and IsLike = TRUE",
             param: new { Id = id },
             transaction: Transaction);
         return count.FirstOrDefault(0);
@@ -37,16 +37,16 @@ public class CommentLikesRepository : GenericRepository<CommentLikes>, ICommentL
     public async Task<int> GetCountDislikesByCommentIdAsync(int id)
     {
         var count = await Connection.QueryAsync<int>(
-            "select Count(*) from commentLikes c inner join likeDislike l on c.likeId = l.id where c.commentId = @Id and l.body = 'dislike'",
+            "select Count(*) from CommentLikes where CommentId = @Id and IsLike = FALSE",
             param: new { Id = id },
             transaction: Transaction);
-        return count.FirstOrDefault(0);
+        return count.FirstOrDefault(null);
     }
 
     public async Task<int?> GetIdByUserIdAndCommentIdAndLike(string userId, int commentId)
     {
         var Id = await Connection.QueryAsync<int>(
-            "select c.id from commentLikes c inner join likeDislike l on c.likeId = l.id where c.commentId = @CommentId and c.userId = @UserId and l.body = 'like'",
+            "select c.id from CommentLikes c  where c.CommentId = @CommentId and c.UserId = @UserId and c.IsLike = TRUE",
             param:new {UserId = userId, CommentId = commentId},
             transaction:Transaction);
         if (Id.Count() == 0)
@@ -62,7 +62,7 @@ public class CommentLikesRepository : GenericRepository<CommentLikes>, ICommentL
     public async Task<int?> GetIdByUserIdAndCommentIdAndDislike(string userId, int commentId)
     {
         var Id = await Connection.QueryAsync<int>(
-            "select c.id from commentLikes c inner join likeDislike l on c.likeId = l.id where c.commentId = @CommentId and c.userId = @UserId and l.body = 'dislike'",
+            "select c.id from CommentLikes c where c.CommentId = @CommentId and c.UserId = @UserId and c.IsLike = FALSE",
             param:new {UserId = userId, CommentId = commentId},
             transaction:Transaction);
         if (Id.Count() == 0)

@@ -22,8 +22,6 @@ public class CommentsLikesService : ICommentsLikesService
     {
         var result = _mapper.Map<CommentLikesRequestDTO, CommentLikes>(comment);
 
-        result.LikeId = await _unitOfWork.LikeRepository.GetIdByBodyAsync("like");
-
         var idDislike = await _unitOfWork.CommentLikesRepository.GetIdByUserIdAndCommentIdAndDislike(comment.UserId, comment.CommentId);
 
         if (idDislike != null)
@@ -63,9 +61,7 @@ public class CommentsLikesService : ICommentsLikesService
             await _unitOfWork.CommentLikesRepository.DeleteAsync(idLike.Value);
             _unitOfWork.Commit();
         }
-        
-        result.LikeId = await _unitOfWork.LikeRepository.GetIdByBodyAsync("dislike");
-        
+
         var idDislike = await _unitOfWork.CommentLikesRepository.GetIdByUserIdAndCommentIdAndDislike(comment.UserId, comment.CommentId);
         
         if (idDislike.HasValue)

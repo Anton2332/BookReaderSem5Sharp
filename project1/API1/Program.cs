@@ -16,50 +16,25 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddHealthChecks();
-// builder.Services.AddMassTransit(x =>
+
+// builder.Services.AddMassTransit(config =>
 // {
-//     // x.AddConsumer<BookConsumer>(typeof(BookConsumerDefinition));
-//     // x.SetKebabCaseEndpointNameFormatter();
-//     // x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
-//     x.AddConsumer<BookConsumer>();
-//     x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+//     config.AddConsumer<BookConsumer>();
+//
+//     config.UsingRabbitMq((ctx, cfg) =>
 //     {
-//         // cfg.UseHealthCheck(provider);
-//         cfg.Host(new Uri("rabbitmq://localhost"), h =>
+//         cfg.Host("rabbitmq://localhost");
+//         
+//         cfg.ReceiveEndpoint("book_comment_create", c =>
 //         {
-//             h.Username("guest");
-//             h.Password("guest");
+//             c.ConfigureConsumer<BookConsumer>(ctx);
 //         });
-//         cfg.ReceiveEndpoint("book_comment_create", ep =>
-//         {
-//             ep.PrefetchCount = 16;
-//             ep.UseMessageRetry(r => r.Interval(2, 100));
-//             ep.ConfigureConsumer<BookConsumer>(provider);
-//         });
-//     }));
+//     });
 // });
-
-builder.Services.AddMassTransit(config =>
-{
-    config.AddConsumer<BookConsumer>();
-
-    config.UsingRabbitMq((ctx, cfg) =>
-    {
-        cfg.Host("rabbitmq://localhost");
-        
-        cfg.ReceiveEndpoint("book_comment_create", c =>
-        {
-            c.ConfigureConsumer<BookConsumer>(ctx);
-        });
-    });
-});
 
 
 builder.Services.AddTransient<ICommentsRepository, CommentsRepository>();
-builder.Services.AddTransient<IBookCommentsRepository, BookCommentsRepository>();
 builder.Services.AddTransient<ICommentLikesRepository, CommentLikesRepository>();
-builder.Services.AddTransient<ILikeRepository, LikeRepository>();
-builder.Services.AddTransient<IUserCommentsRepository, UserCommentsRepository>();
 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
@@ -73,7 +48,7 @@ builder.Services.AddScoped(s =>
 );
 builder.Services.AddScoped<IDbTransaction>(s =>
 {
-    SqlConnection connection = s.GetRequiredService<SqlConnection>();
+    MySqlConnection connection = s.GetRequiredService<MySqlConnection>();
     connection.Open();
     return connection.BeginTransaction();
 });

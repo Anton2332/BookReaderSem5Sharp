@@ -90,7 +90,7 @@ public class GenericRepository<T> : RepositoryBase, IGenericRepository<T> where 
                 insertQuery.Append("(");
     
                 var properties = GenerateListOfProperties(GetProperties);
-                properties.ForEach(prop => { insertQuery.Append($"[{prop}],"); });
+                properties.ForEach(prop => { insertQuery.Append($"{prop},"); });
     
                 insertQuery
                     .Remove(insertQuery.Length - 1, 1)
@@ -102,7 +102,7 @@ public class GenericRepository<T> : RepositoryBase, IGenericRepository<T> where 
                     .Remove(insertQuery.Length - 1, 1)
                     .Append(")");
     
-                insertQuery.Append("; SELECT SCOPE_IDENTITY()");
+                insertQuery.Append("; SELECT LAST_INSERT_ID();");
     
                 return insertQuery.ToString();
             }

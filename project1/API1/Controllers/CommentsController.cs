@@ -23,6 +23,22 @@ public class CommentsController : ControllerBase
         try
         {
             var results = await _commentsService.GetAllByBookIdAsync(bookId);
+            if (results == null)
+                return StatusCode(StatusCodes.Status204NoContent);
+            return Ok(results);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error");
+        }
+    }
+    
+    [HttpGet("GetCommentsByBookId/{bookId}")]
+    public async Task<ActionResult<IEnumerable<CommentsResponsDTO>>> GetCommentsByBookId(int bookId)
+    {
+        try
+        {
+            var results = await _commentsService.GetCommentsByBookIdAsync(bookId);
             return Ok(results);
         }
         catch (Exception ex)
@@ -31,12 +47,12 @@ public class CommentsController : ControllerBase
         }
     }
 
-    [HttpGet("GetAllRepliesByCommentId/{commentId}")]
+    [HttpGet("GetRepliesByCommentId/{commentId}")]
     public async Task<ActionResult<IEnumerable<CommentsResponsDTO>>> GetAllRepliesByCommentId(int commentId)
     {
         try
         {
-            var results = await _commentsService.GetAllRepliesAsync(commentId);
+            var results = await _commentsService.GetRepliesByCommentIdAsync(commentId);
             return Ok(results);
         }
         catch (Exception ex)

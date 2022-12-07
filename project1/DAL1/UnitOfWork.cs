@@ -2,6 +2,7 @@
 using DAL1.Interface;
 using DAL1.Repositories;
 using Microsoft.Data.SqlClient;
+using MySqlConnector;
 
 namespace DAL1;
 
@@ -10,26 +11,15 @@ public class UnitOfWork : IUnitOfWork
     private IDbConnection? _connection;
     private IDbTransaction? _transaction;
 
-    private IBookCommentsRepository? _bookCommentsRepository;
     private ICommentLikesRepository? _commentLikesRepository;
     private ICommentsRepository? _commentsRepository;
-    private ILikeRepository? _likeRepository;
-    private IUserCommentsRepository? _userCommentsRepository;
 
     private bool _disposed;
 
-    public UnitOfWork(SqlConnection connection, IDbTransaction transaction)
+    public UnitOfWork(MySqlConnection connection, IDbTransaction transaction)
     {
         _connection = connection;
         _transaction = transaction;
-    }
-
-    public IBookCommentsRepository BookCommentsRepository
-    {
-        get
-        {
-            return _bookCommentsRepository ?? (_bookCommentsRepository = new BookCommentsRepository(_transaction));
-        }
     }
 
     public ICommentLikesRepository CommentLikesRepository
@@ -48,22 +38,6 @@ public class UnitOfWork : IUnitOfWork
         }
     }
 
-    public ILikeRepository LikeRepository
-    {
-        get
-        {
-            return _likeRepository ?? (_likeRepository = new LikeRepository(_transaction));
-        }
-    }
-
-    public IUserCommentsRepository UserCommentsRepository
-    {
-        get
-        {
-            return _userCommentsRepository ?? (_userCommentsRepository = new UserCommentsRepository(_transaction));
-        }
-    }
-
     public IDbTransaction GetDbTransaction
     {
         get
@@ -74,11 +48,8 @@ public class UnitOfWork : IUnitOfWork
 
     private void resetRepositories()
     {
-        _bookCommentsRepository = null;
         _commentLikesRepository = null;
         _commentsRepository = null;
-        _likeRepository = null;
-        _userCommentsRepository = null;
     }
 
     public void Commit()

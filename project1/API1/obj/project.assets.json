@@ -2105,7 +2105,8 @@
         "dependencies": {
           "AutoMapper": "11.0.1",
           "Dapper": "2.0.123",
-          "Microsoft.Data.SqlClient": "5.0.0"
+          "Microsoft.Data.SqlClient": "5.0.0",
+          "MySqlConnector": "2.2.0"
         },
         "compile": {
           "bin/placeholder/DAL1.dll": {}
