@@ -10,7 +10,6 @@ public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
-        CreateTestMaps();
         CreateAuthorMaps();
         CreateBookAuthorMaps();
         CreateBookCategoryMaps();
@@ -23,13 +22,6 @@ public class AutoMapperProfile : Profile
         CreateRatingMaps();
         CreateStatusMaps();
         CreateTagMaps();
-        CreateUserBookMaps();
-    }
-
-    private void CreateTestMaps()
-    {
-        CreateMap<Test, TestDTO>();
-        CreateMap<TestDTO, Test>();
     }
 
     private void CreateAuthorMaps()
@@ -107,12 +99,6 @@ public class AutoMapperProfile : Profile
     {
         CreateMap<TagRequestDTO, Tag>();
         CreateMap<Tag, TagResponseDTO>();
-    }
-
-    private void CreateUserBookMaps()
-    {
-        CreateMap<UserBookRequestDTO, UserBook>();
-        CreateMap<UserBook, UserBookResponseDTO>();
     }
     
 }

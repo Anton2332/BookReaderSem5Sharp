@@ -16,7 +16,6 @@ public interface IUnitOfWork
     public IRatingRepository RatingRepository { get; }
     public IStatusRepository StatusRepository { get; }
     public ITagRepository TagRepository { get; }
-    public IUserBookRepository UserBookRepository { get; }
     
     public DBContext DbContext { get; }
 

@@ -18,7 +18,6 @@ public class UnitOfWork : IUnitOfWork
     public IRatingRepository RatingRepository { get; }
     public IStatusRepository StatusRepository { get; }
     public ITagRepository TagRepository { get; }
-    public IUserBookRepository UserBookRepository { get; }
 
     public UnitOfWork(
         DBContext dbContext, 
@@ -33,8 +32,7 @@ public class UnitOfWork : IUnitOfWork
         IPageRepository pageRepository, 
         IRatingRepository ratingRepository, 
         IStatusRepository statusRepository, 
-        ITagRepository tagRepository, 
-        IUserBookRepository userBookRepository)
+        ITagRepository tagRepository)
     {
         _dbContext = dbContext;
         AuthorRepository = authorRepository;
@@ -49,7 +47,6 @@ public class UnitOfWork : IUnitOfWork
         RatingRepository = ratingRepository;
         StatusRepository = statusRepository;
         TagRepository = tagRepository;
-        UserBookRepository = userBookRepository;
     }
     
     public DBContext DbContext

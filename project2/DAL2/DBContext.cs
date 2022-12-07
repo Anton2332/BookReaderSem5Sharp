@@ -45,6 +45,5 @@ public class DBContext : DbContext
         modelBuilder.ApplyConfiguration(new RatingConfiguration());
         modelBuilder.ApplyConfiguration(new StatusConfiguration());
         modelBuilder.ApplyConfiguration(new TagConfiguration());
-        modelBuilder.ApplyConfiguration(new UserBookConfiguration());
     }
 }

@@ -3,7 +3,6 @@
 public class Rating : EntityBase
 {
     public string UserId { get; set; }
-    public UserBook User { get; set; }
     
     public float Ball { get; set; }
     

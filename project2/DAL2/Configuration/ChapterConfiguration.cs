@@ -17,10 +17,6 @@ public class ChapterConfiguration : IEntityTypeConfiguration<Chapter>
             .OnDelete(DeleteBehavior.Cascade);
 
         builder.Property(ch => ch.UserId).IsRequired();
-        builder.HasOne(ch => ch.User)
-            .WithMany(u => u.Chapters)
-            .HasForeignKey(ch => ch.UserId);
-            // .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasIndex(x => new
         {

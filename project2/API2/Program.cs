@@ -13,26 +13,6 @@ using Microsoft.EntityFrameworkCore;
 using BookCategoryService = BLL2.Services.BookCategoryService;
 
 var builder = WebApplication.CreateBuilder(args);
-{
-// Add services to the container.
-// builder.Services.AddMassTransit(x =>
-// {
-//     x.UsingRabbitMq();
-// });
-
-// builder.Services.AddMassTransit(x =>
-// {
-//     x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
-//     {
-//         // config.UseHealthCheck(provider);
-//         config.Host(new Uri("rabbitmq://localhost"), h =>
-//         {
-//             h.Username("guest");
-//             h.Password("guest");
-//         });
-//     }));
-// });
-}
 
 builder.Services.AddGrpc();
 
@@ -69,8 +49,9 @@ builder.Services.AddMapper();
 
 builder.Services.AddCors();
 
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<DBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
 
 // builder.Services.AddDbContext<DBContext>();
@@ -88,7 +69,6 @@ builder.Services.AddTransient<IPageRepository, PageRepository>();
 builder.Services.AddTransient<IRatingRepository, RatingRepository>();
 builder.Services.AddTransient<IStatusRepository, StatusRepository>();
 builder.Services.AddTransient<ITagRepository, TagRepository>();
-builder.Services.AddTransient<IUserBookRepository, UserBookRepository>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -104,7 +84,6 @@ builder.Services.AddTransient<IPageService, PageService>();
 builder.Services.AddTransient<IRatingService, RatingService>();
 builder.Services.AddTransient<IStatusService, StatusService>();
 builder.Services.AddTransient<ITagService, TagService>();
-builder.Services.AddTransient<IUserBookService, UserBookService>();
 
 
 builder.Services.AddMvc(options =>
