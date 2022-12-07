@@ -8,8 +8,10 @@ public class DBContextFactory : IDesignTimeDbContextFactory<DBContext>
     public DBContext CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<DBContext>();
+        
+        string connectionString = "Server=localhost;User ID=root;Password=123456;Database=db2_Csharp_sem5";
 
-        optionsBuilder.UseSqlServer("Server=localhost;Initial Catalog=db2_Csharp_sem5;Integrated Security=True");
+        optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 
         return new DBContext(optionsBuilder.Options);
     }

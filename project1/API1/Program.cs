@@ -7,6 +7,7 @@ using DAL1.Repositories;
 using MassTransit;
 using MassTransit.MultiBus;
 using Microsoft.Data.SqlClient;
+using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,7 +67,7 @@ builder.Services.AddMapper();
 builder.Services.AddServices();
 
 builder.Services.AddScoped(s =>
-    new SqlConnection(
+    new MySqlConnection(
         builder.Configuration.GetConnectionString("DefaultConnection")
         )
 );
