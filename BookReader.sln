@@ -52,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_USER", "projectUser\BLL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_USER", "projectUser\API_USER\API_USER.csproj", "{4CBD1378-DBC7-478F-80EB-B7D5FAB374BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregator", "Aggregator\Aggregator.csproj", "{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,6 +136,10 @@ Global
 		{4CBD1378-DBC7-478F-80EB-B7D5FAB374BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CBD1378-DBC7-478F-80EB-B7D5FAB374BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CBD1378-DBC7-478F-80EB-B7D5FAB374BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{93A451C9-8A52-4E29-A013-F58E049C1330} = {DF9E6D95-F5D9-4D97-B7E7-AA231967C76D}

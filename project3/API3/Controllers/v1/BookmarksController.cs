@@ -1,4 +1,5 @@
-﻿using Application.Bookmark.Commands.CreateBookmark;
+﻿using API3.Interfaces;
+using Application.Bookmark.Commands.CreateBookmark;
 using Application.Bookmark.Commands.DeleteBookmark;
 using Application.Bookmark.Commands.UpdateBookmark;
 using Application.Bookmark.Queries.GetBookmark;
@@ -17,12 +18,10 @@ namespace API3.Controllers.v1;
 public class BookmarksController : BaseController
 {
 
-    private Book.BookClient _client;
+    private IBookService _client;
 
-    public BookmarksController()
+    public BookmarksController( IBookService client)
     {
-        var grpc = GrpcChannel.ForAddress("https://localhost:7045");
-        var client = new Book.BookClient(grpc);
         _client = client;
     }
     
@@ -95,13 +94,9 @@ public class BookmarksController : BaseController
         {
             foreach (var item in results)
             {
-                var book_data = _client.GetBookById(new GetBookByIdModel()
-                {
-                    BookId = item.BookId
-                });
+                var book_data = await _client.GetBookByIdModel(item.BookId);
                 item.BookDescription = book_data.Description;
                 item.BookName = book_data.Name;
-                Console.WriteLine(book_data.Name);
             }
         }
         catch (Exception e)

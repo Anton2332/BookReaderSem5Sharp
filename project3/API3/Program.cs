@@ -1,16 +1,26 @@
 using API3.Modules;
 using System.Reflection;
+using API3.Config;
+using API3.Interfaces;
+using API3.Services;
 using Application.Bookmark.Queries.GetBookmark;
 using Infrastructure.Repositories;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using FluentValidation;
+using Google.Protobuf.WellKnownTypes;
 using GrpcClient;
 using Infrastructure.Configuration;
 using Infrastructure.Persistence;
 using MediatR;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// builder.Services.AddHealthChecks()
+//     .AddCheck("self", () => HealthCheckResult.Healthy())
+//     .AddUrlGroup(new Uri(builder.Configuration["BookUrlHC"]), name: "bookapi-check", tags: new string[] { "bookapi" });
 
 // Add services to the container.
 
@@ -56,6 +66,17 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
         b.RegisterModule(new Modules());
         b.RegisterModule(new MediatorModule());
     });
+
+builder.Services.AddOptions();
+// builder.Services.Configure<UrlsConfig>(builder.Configuration.GetSection("urls"));
+
+
+builder.Services.AddGrpcClient<Book.BookClient>((services, options) =>
+{
+    // var bookApi = services.GetRequiredService<IOptions<UrlsConfig>>().Value.GrpcBook;
+    options.Address = new Uri(builder.Configuration.GetSection("urls:book").Value);
+});
+builder.Services.AddScoped<IBookService, BookServices>();
 
 var app = builder.Build();
 
