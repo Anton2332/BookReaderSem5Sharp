@@ -52,6 +52,12 @@ public class BookService : IBookService
         var result = await _unitOfWork.BookRepository.GetByIdAsync(id);
         return _mapper.Map<Book, BookResponseDTO>(result);
     }
+    
+    public async Task<IEnumerable<BookResponseDTO>> GetByIdsAsync(List<int> id)
+    {
+        var results = await _unitOfWork.BookRepository.GetBooksByIdsAsync(id);
+        return results?.Select(_mapper.Map<Book, BookResponseDTO>);
+    }
 
     public async Task<Page<BookResponseDTO>> GetPagedBooksAsync(QueryStringParameters query)
     {

@@ -49,6 +49,10 @@ namespace GrpcServer {
     static readonly grpc::Marshaller<global::GrpcServer.GetBookByIdModel> __Marshaller_book_GetBookByIdModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServer.GetBookByIdModel.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcServer.BookModel> __Marshaller_book_BookModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServer.BookModel.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GrpcServer.GetBookByIdsModel> __Marshaller_book_GetBookByIdsModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServer.GetBookByIdsModel.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GrpcServer.BooksModel> __Marshaller_book_BooksModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServer.BooksModel.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcServer.GetBookByIdModel, global::GrpcServer.BookModel> __Method_GetBookById = new grpc::Method<global::GrpcServer.GetBookByIdModel, global::GrpcServer.BookModel>(
@@ -57,6 +61,14 @@ namespace GrpcServer {
         "GetBookById",
         __Marshaller_book_GetBookByIdModel,
         __Marshaller_book_BookModel);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::GrpcServer.GetBookByIdsModel, global::GrpcServer.BooksModel> __Method_GetBooksByIds = new grpc::Method<global::GrpcServer.GetBookByIdsModel, global::GrpcServer.BooksModel>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetBooksByIds",
+        __Marshaller_book_GetBookByIdsModel,
+        __Marshaller_book_BooksModel);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,6 +86,12 @@ namespace GrpcServer {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.BooksModel> GetBooksByIds(global::GrpcServer.GetBookByIdsModel request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -82,7 +100,8 @@ namespace GrpcServer {
     public static grpc::ServerServiceDefinition BindService(BookBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetBookById, serviceImpl.GetBookById).Build();
+          .AddMethod(__Method_GetBookById, serviceImpl.GetBookById)
+          .AddMethod(__Method_GetBooksByIds, serviceImpl.GetBooksByIds).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -93,6 +112,7 @@ namespace GrpcServer {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, BookBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetBookById, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.GetBookByIdModel, global::GrpcServer.BookModel>(serviceImpl.GetBookById));
+      serviceBinder.AddMethod(__Method_GetBooksByIds, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.GetBookByIdsModel, global::GrpcServer.BooksModel>(serviceImpl.GetBooksByIds));
     }
 
   }

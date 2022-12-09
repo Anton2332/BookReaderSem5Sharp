@@ -6,15 +6,23 @@ package book;
 
 service Book {
   rpc GetBookById (GetBookByIdModel) returns (BookModel);
+  rpc GetBooksByIds (GetBookByIdsModel) returns (BooksModel);
 }
 
 message GetBookByIdModel{
   int32 bookId = 1;
 }
 
+message GetBookByIdsModel{
+  string ids = 1;
+}
+
 message BookModel {
   int32 bookId = 1;
   string name = 2;
   string description = 3;
-  
+}
+
+message BooksModel {
+  repeated BookModel data = 1;
 }

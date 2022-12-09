@@ -31,4 +31,22 @@ public class BookService : Book.BookBase
             return null;
         }
     }
+
+    public override async Task<BooksModel> GetBooksByIds(GetBookByIdsModel request, ServerCallContext context)
+    {
+        try
+        {
+            var numIds = request.Ids.Split(',').Select(id => (Ok: int.TryParse(id, out int x), Value: x));
+
+            var idsToSelect = numIds
+                .Select(id => id.Value).ToList();
+            var result = await _bookService.GetByIdsAsync(idsToSelect);
+            // var results = List<Book>
+            return null;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
 }
