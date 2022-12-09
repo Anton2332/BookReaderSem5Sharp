@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Bookmark.Queries.GetBookmarkByBookId;
 
-public class GetBookmarkByBookIdHandler : IRequestHandler<GetBookmarkByBookIdQuery, BookmarkDTO>
+public class GetBookmarkByBookIdHandler : IRequestHandler<GetBookmarkByBookIdQuery, IEnumerable<BookmarkDTO>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -16,10 +16,10 @@ public class GetBookmarkByBookIdHandler : IRequestHandler<GetBookmarkByBookIdQue
         _mapper = mapper;
     }
 
-    public async Task<BookmarkDTO> Handle(GetBookmarkByBookIdQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<BookmarkDTO>> Handle(GetBookmarkByBookIdQuery request, CancellationToken cancellationToken)
     {
-        var entity = _unitOfWork.BookmarkReadRepository.GetByBookId(request.BookId);
+        var entity = _unitOfWork.BookmarkReadRepository.GetAllByBookId(request.BookId);
 
-        return _mapper.Map<BookmarkDTO>(entity);
+        return  _mapper.Map<IEnumerable<BookmarkDTO>>(entity);
     }
 }

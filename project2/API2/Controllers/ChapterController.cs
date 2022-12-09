@@ -1,6 +1,8 @@
 ﻿using BLL2.DTO.Request;
 using BLL2.Interfaces;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using SharedProject.Models;
 
 namespace API2.Controllers;
 [ApiController]
@@ -8,16 +10,29 @@ namespace API2.Controllers;
 public class ChapterController : ControllerBase
 {
     private readonly IChapterService _chapterService;
+    private readonly IPublishEndpoint _publishEndpoint;
 
-    public ChapterController(IChapterService chapterService)
-        => _chapterService = chapterService;
-    
+    public ChapterController(IChapterService chapterService, IPublishEndpoint publishEndpoint)
+    {
+        _chapterService = chapterService;
+        _publishEndpoint = publishEndpoint;
+    }
+
+
     [HttpPost]
     public async Task<IActionResult> AddChapterAsync([FromBody] ChapterRequestDTO requestDto)
     {
         try
         {
             await _chapterService.AddAsync(requestDto);
+            Console.WriteLine(requestDto);
+            await _publishEndpoint.Publish<ChapterModel>(new()
+            {
+                BookId = requestDto.BookId,
+                ChapterId = requestDto.ChapterId,
+                ChapterName = requestDto.ChapterName,
+                CreatedAt = requestDto.CreatedAt
+            });
             return Ok();
         }
         catch (Exception e)

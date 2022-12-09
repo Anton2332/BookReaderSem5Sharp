@@ -2,7 +2,7 @@
 
 namespace Application.Bookmark.Queries.GetBookmarkByBookId;
 
-public class GetBookmarkByBookIdQuery : IRequest<BookmarkDTO>
+public class GetBookmarkByBookIdQuery : IRequest<IEnumerable<BookmarkDTO>>
 {
     public int BookId { get; set; }
 }

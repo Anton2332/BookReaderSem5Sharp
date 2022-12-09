@@ -15,16 +15,6 @@ namespace API3.Controllers.v1;
 [Route("[controller]")]
 public class NotificationController : BaseController
 {
-    [HttpPost]
-    public async Task<IActionResult> CreateNotification([FromBody] CreateNotificationDTO createNotificationDto)
-    {
-        var result = await Mediator.Send(new CreateNotificationCommand()
-        {
-            CreateNotificationDto = createNotificationDto,
-        });
-
-        return Ok(result);
-    }
 
     [HttpPost("GetNotifications/{isRead}")]
     public async Task<IActionResult> GetNotifications([FromBody] QueryOptions options, bool isRead)

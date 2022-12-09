@@ -1,6 +1,7 @@
 using API3.Modules;
 using System.Reflection;
 using API3.Config;
+using API3.Consumer;
 using API3.Interfaces;
 using API3.Services;
 using Application.Bookmark.Queries.GetBookmark;
@@ -12,11 +13,31 @@ using Google.Protobuf.WellKnownTypes;
 using GrpcClient;
 using Infrastructure.Configuration;
 using Infrastructure.Persistence;
+using MassTransit;
+using MassTransit.MultiBus;
 using MediatR;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
+using SharedProject.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHealthChecks();
+
+builder.Services.AddMassTransit(config =>
+{
+    config.AddConsumer<ChapterConsumer>();
+
+    config.UsingRabbitMq((ctx, cfg) =>
+    {
+        cfg.Host("rabbitmq://localhost");
+
+        cfg.ReceiveEndpoint("chapter_notification", c =>
+        {
+            c.ConfigureConsumer<ChapterConsumer>(ctx);
+        });
+    });
+});
 
 // builder.Services.AddHealthChecks()
 //     .AddCheck("self", () => HealthCheckResult.Healthy())

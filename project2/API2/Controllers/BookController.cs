@@ -11,12 +11,12 @@ namespace API2.Controllers;
 public class BookController : ControllerBase
 {
     private readonly IBookService _bookService;
-    private readonly IPublishEndpoint _publishEndpoint;
+    // private readonly IPublishEndpoint _publishEndpoint;
 
-    public BookController(IBookService bookService, IPublishEndpoint publishEndpoint)
+    public BookController(IBookService bookService)
     {
         _bookService = bookService;
-        _publishEndpoint = publishEndpoint;
+        // _publishEndpoint = publishEndpoint;
     }
     
     [HttpPost]
@@ -25,11 +25,10 @@ public class BookController : ControllerBase
         try
         {
             var id = await _bookService.AddAsync(requestDto);
-            // var endPoint = await _bus.GetSendEndpoint(new Uri("queue:book_comment_create"));
-            await _publishEndpoint.Publish<BookModel>(new ()
-            {
-                Id = id
-            });
+            // await _publishEndpoint.Publish<BookModel>(new ()
+            // {
+            //     Id = id
+            // });
             return Ok();
         }
         catch (Exception e)

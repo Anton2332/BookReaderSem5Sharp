@@ -6,9 +6,6 @@ public class CreateNotificationValidator : AbstractValidator<CreateNotificationC
 {
     public CreateNotificationValidator()
     {
-        RuleFor(model => model.CreateNotificationDto.Id)
-            .Cascade(CascadeMode.Stop)
-            .NotNull().WithMessage("Id must be not null");
 
         RuleFor(model => model.CreateNotificationDto.BookmarkId)
             .Cascade(CascadeMode.Stop)

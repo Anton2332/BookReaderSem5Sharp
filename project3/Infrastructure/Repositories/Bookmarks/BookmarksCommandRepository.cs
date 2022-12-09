@@ -16,6 +16,11 @@ public class BookmarksCommandRepository : IBookmarkCommandRepository
     {
         try
         {
+            var lastItem = _context.Bookmarks.Find(x => x.Id != -1)
+                .Sort("{_id:-1}")
+                .Limit(1)
+                .FirstOrDefault();
+            entity.Id = lastItem.Id + 1;
             _context.Bookmarks.InsertOne(entity);
         }
         catch (Exception exception)

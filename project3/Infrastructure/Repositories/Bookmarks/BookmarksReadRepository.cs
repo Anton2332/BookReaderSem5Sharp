@@ -90,11 +90,24 @@ public class BookmarksReadRepository : IBookmarkReadRepository
         }
     }
 
-    public Domain.Entities.Bookmarks GetByBookId(int BookId)
+    public Domain.Entities.Bookmarks GetByBookId(int BookId, int TypeBookmarkId)
     {
         try
         {
-            var result = _context.Bookmarks.Find(x => x.BookId == BookId).FirstOrDefault();
+            var result = _context.Bookmarks.Find(x => x.BookId == BookId && x.TypeBookmarkId == TypeBookmarkId).FirstOrDefault();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+    
+    public IEnumerable<Domain.Entities.Bookmarks> GetAllByBookId(int BookId)
+    {
+        try
+        {
+            var result = _context.Bookmarks.Find(x => x.BookId == BookId).ToList();
             return result;
         }
         catch (Exception ex)

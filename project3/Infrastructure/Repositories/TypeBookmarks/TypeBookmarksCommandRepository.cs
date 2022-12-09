@@ -18,6 +18,14 @@ public class TypeBookmarksCommandRepository : ITypeBookmarkCommandRepository
     {
         try
         {
+            var lastItem = _context.TypeBookmarks.Find(x => x.Id != -1)
+                .Sort("{_id:-1}")
+                .Limit(1)
+                .FirstOrDefault();
+            entity.Id = lastItem.Id + 1;
+            
+            Console.WriteLine(lastItem.Id);
+            
             _context.TypeBookmarks.InsertOne(entity);
         }
         catch (Exception exception)

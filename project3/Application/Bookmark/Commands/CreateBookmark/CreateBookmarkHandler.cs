@@ -18,7 +18,7 @@ public class CreateBookmarkHandler : IRequestHandler<CreateBookmarkCommand, bool
 
     public async Task<bool> Handle(CreateBookmarkCommand request, CancellationToken cancellationToken)
     {
-        Bookmarks entity = _unitOfWork.BookmarkReadRepository.GetByBookId(request.CreateBookmarkDto.BookId);
+        Bookmarks entity = _unitOfWork.BookmarkReadRepository.GetByBookId(request.CreateBookmarkDto.BookId, request.CreateBookmarkDto.TypeBookmarkId);
 
         if (entity != null) throw new ApplicationException($"Bookmarks with Bookid {request.CreateBookmarkDto.BookId} is found ");
         
