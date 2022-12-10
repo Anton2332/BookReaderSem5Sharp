@@ -54,6 +54,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_USER", "projectUser\API
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregator", "Aggregator\Aggregator.csproj", "{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{4AB7E168-3B94-4DA4-8BB5-7B5DCDF9A455}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6766888C-DC1E-4E10-A4C2-71F4BD10BC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB7E168-3B94-4DA4-8BB5-7B5DCDF9A455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB7E168-3B94-4DA4-8BB5-7B5DCDF9A455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB7E168-3B94-4DA4-8BB5-7B5DCDF9A455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB7E168-3B94-4DA4-8BB5-7B5DCDF9A455}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{93A451C9-8A52-4E29-A013-F58E049C1330} = {DF9E6D95-F5D9-4D97-B7E7-AA231967C76D}
