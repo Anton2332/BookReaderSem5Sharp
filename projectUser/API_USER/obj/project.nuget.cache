@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cpAE7zhCruZOcHe1aj5jK+QQeKHTQavXj24velIsf+PiJef/XOhAKrJeVPhUVmagb+kZhKvuL6bPo0nWgGhqzQ==",
+  "dgSpecHash": "T2yqcMcrMZXFJWK4fZ5G5FHuFda38HlEUcYQgI0wQkbH32J8rSj5F3zWxldhNDGl/Xc//0j98mZ6UdcC3JO7cg==",
   "success": true,
   "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\projectUser\\API_USER\\API_USER.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\mysqlconnector\\2.2.0\\mysqlconnector.2.2.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0-alpha.1\\pomelo.entityframeworkcore.mysql.7.0.0-alpha.1.nupkg.sha512",

@@ -1,5 +1,4 @@
 using IdentityServer;
-using IdentityServer4.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +10,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddIdentityServer()
-    .AddInMemoryClients(Clients.Get())
-    .AddInMemoryIdentityResources(IdentityServer.Resources.GetIdentityResources())
-    .AddInMemoryApiResources(IdentityServer.Resources.GetApiResources())
-    .AddInMemoryApiScopes(IdentityServer.Resources.GetApiScopes())
-    .AddTestUsers(Users.Get())
+    .AddInMemoryClients(Config.Clients)
+    .AddInMemoryIdentityResources(Config.IdentityResources)
+    .AddInMemoryApiResources(Config.ApiResources)
+    .AddInMemoryApiScopes(Config.ApiScopes)
+    .AddTestUsers(Config.TestUsers)
     .AddDeveloperSigningCredential();
 
 var app = builder.Build();
@@ -33,6 +32,7 @@ app.UseIdentityServer();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 

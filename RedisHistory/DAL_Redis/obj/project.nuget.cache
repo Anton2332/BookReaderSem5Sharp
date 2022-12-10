@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ygBqS3vQ250YfiWxzjZPAmof9vDhJdtIO8Bb6IrQeNPgQC0nlrW3ZAzZ6myuYnm8cE96KhPaAKuPYIZVX77Msg==",
+  "dgSpecHash": "xawEujEJZVL4HQMO9DgTPL30FsEm1DFNnrNkLLMWkU+F3PccOZCDsc88gbBiloAlMTZp+mEk46QT3mLRfDde+A==",
   "success": true,
   "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\RedisHistory\\DAL_Redis\\DAL_Redis.csproj",
   "expectedPackageFiles": [

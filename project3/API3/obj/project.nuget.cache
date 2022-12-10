@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ji9Phr89RPzG1W6nciXwyM5q7LDPh1PkzFPJxK0QXL107pB6tkwZSf2P3+bZl0ykIfZ7cN62KhCRXzM7GW0fkQ==",
+  "dgSpecHash": "EfSMT1Bf/Z8K47koy1cGtNT8GU7fPQysXecelHgqpPK/FCDiUeBUFZPbMpYckmkrkXJnSTHsrkVL6/uM3ESvqA==",
   "success": true,
   "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project3\\API3\\API3.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,7 @@
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.net.http\\2.0.20710\\microsoft.net.http.2.0.20710.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.openapi\\1.4.4-preview1\\microsoft.openapi.1.4.4-preview1.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
