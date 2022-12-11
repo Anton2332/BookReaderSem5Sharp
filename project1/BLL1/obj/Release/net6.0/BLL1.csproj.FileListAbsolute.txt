@@ -1,0 +1,15 @@
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\bin\Release\net6.0\BLL1.deps.json
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\bin\Release\net6.0\BLL1.dll
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\bin\Release\net6.0\BLL1.pdb
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\bin\Release\net6.0\DAL1.dll
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\bin\Release\net6.0\DAL1.pdb
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.csproj.AssemblyReference.cache
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.AssemblyInfoInputs.cache
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.AssemblyInfo.cs
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.csproj.CoreCompileInputs.cache
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.csproj.CopyComplete
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.dll
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\refint\BLL1.dll
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\BLL1.pdb
+D:\study\5_semester\C#\projects\BookReader\project1\BLL1\obj\Release\net6.0\ref\BLL1.dll

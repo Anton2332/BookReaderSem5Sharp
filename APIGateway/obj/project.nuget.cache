@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Y3pq3QS8GFipKHUN1OrWVVjT8cy6yQayWlIC3kbhF0VmE7x7kt4ZGdFLYfcb4hVrAR5lwUGfLHGeTpgr0KgzpA==",
+  "dgSpecHash": "/XU+ZZD74BsBWRY6iJCf/6ONHr5l1ztWowtVe6p2sIrb+I5iJzVfpD7CJ81onOF1Ou2k6igGxScXNdOLfDcyXA==",
   "success": true,
   "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\APIGateway\\APIGateway.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\anton\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\mmlib.swaggerforocelot\\6.0.0\\mmlib.swaggerforocelot.6.0.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

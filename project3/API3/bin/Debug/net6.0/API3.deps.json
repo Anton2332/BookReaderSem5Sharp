@@ -29,6 +29,7 @@
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Microsoft.OpenApi": "1.4.4-preview1",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.0",
           "SharedProject": "1.0.0",
           "Swashbuckle": "5.6.0",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -585,6 +586,7 @@
           }
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.0": {},
       "Microsoft.Web.Infrastructure/1.0.0": {
         "runtime": {
           "lib/net40/Microsoft.Web.Infrastructure.dll": {
@@ -1238,6 +1240,13 @@
       "sha512": "sha512-VGEq0LiPrTYEOhoMOpWlKUYKE6OrLKIte1sSEnWAmdOsEsj83wbW2hSush3auhU9g4mqZdNbEngzODhdG+4ncg==",
       "path": "microsoft.openapi/1.4.4-preview1",
       "hashPath": "microsoft.openapi.1.4.4-preview1.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gfDtAL1WhkjbRdbZlt/ZeQYCbgRpNCZCGj+yeqHObsNFRDHjq8qZJOX9AyTxJpSRYMi9SJk7JDyAbbVYRgEhAA==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.17.0",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
     },
     "Microsoft.Web.Infrastructure/1.0.0": {
       "type": "package",

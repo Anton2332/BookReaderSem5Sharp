@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HF8ZCxh2BngDRhFvArWzZlU3lfiAmonNd89Iv2/X15TNK2MMUE4syVaKE9wRepgfv911V/b0nSQtz4FsttEJUw==",
+  "dgSpecHash": "eGoVDN3oBfAIwaAE7l9HNABcC2fNphZ/4HT5MIRQ2hp0+X1DRXEvLPPjsd7/diKJYnQFioUwf8yv7tKvvP/xaA==",
   "success": true,
   "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project1\\API1\\API1.csproj",
   "expectedPackageFiles": [
@@ -11,8 +11,6 @@
     "C:\\Users\\anton\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\masstransit\\8.0.9-develop.658\\masstransit.8.0.9-develop.658.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\masstransit.abstractions\\8.0.9-develop.658\\masstransit.abstractions.8.0.9-develop.658.nupkg.sha512",
-    "C:\\Users\\anton\\.nuget\\packages\\masstransit.aspnetcore\\7.3.1\\masstransit.aspnetcore.7.3.1.nupkg.sha512",
-    "C:\\Users\\anton\\.nuget\\packages\\masstransit.extensions.dependencyinjection\\7.3.1\\masstransit.extensions.dependencyinjection.7.3.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\masstransit.rabbitmq\\8.0.9-develop.658\\masstransit.rabbitmq.8.0.9-develop.658.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
