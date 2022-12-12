@@ -63,6 +63,10 @@ public class AuthorController : ControllerBase
         try
         {
             var result = await _authorService.GetByIdAsync(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
 
             return Ok(result);
         }
@@ -78,6 +82,10 @@ public class AuthorController : ControllerBase
         try
         {
             var results = await _authorService.GetAllAsync();
+            if (results.Count() == 0)
+            {
+                return NoContent();
+            }
             return Ok(results);
         }
         catch (Exception e)

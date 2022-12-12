@@ -61,6 +61,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityS
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{36FDFDB9-505D-4DF0-B553-0D2481F56C05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project2_xUnit_Test", "project2\Project2_xUnit_Test\Project2_xUnit_Test.csproj", "{D6D47202-E52F-4F5E-BB9F-E81C9B74D5BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,10 @@ Global
 		{36FDFDB9-505D-4DF0-B553-0D2481F56C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36FDFDB9-505D-4DF0-B553-0D2481F56C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36FDFDB9-505D-4DF0-B553-0D2481F56C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6D47202-E52F-4F5E-BB9F-E81C9B74D5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6D47202-E52F-4F5E-BB9F-E81C9B74D5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6D47202-E52F-4F5E-BB9F-E81C9B74D5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6D47202-E52F-4F5E-BB9F-E81C9B74D5BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -175,6 +181,7 @@ Global
 		{9CB76F6E-C35E-4046-B25E-CE80438E7B2D} = {82D16331-7DAA-486C-8C54-7EC84528A217}
 		{E3EB57A4-71AA-49FF-80B0-17CD6D1C81F1} = {277C83BB-AFD1-4CA7-9916-A39AB17ECCA1}
 		{CF5EE1DB-8819-4D39-A8D5-08C1734FEC5E} = {277C83BB-AFD1-4CA7-9916-A39AB17ECCA1}
+		{D6D47202-E52F-4F5E-BB9F-E81C9B74D5BD} = {FFEBFD6F-7FA8-4D7F-84A6-78F5C28D5F3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB7ADFA9-948C-4EAF-BD7F-EFAB83079A4C}

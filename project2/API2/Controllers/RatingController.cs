@@ -83,4 +83,18 @@ public class RatingController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
         }
     }
+    
+    [HttpGet("GetRatingByBookId/{bookId}")]
+    public async Task<IActionResult> GetRatingByBookIdAsync(int bookId)
+    {
+        try
+        {
+            var results = await _ratingService.GetBallByBookIdAsync(bookId);
+            return Ok(results);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { e.Message });
+        }
+    }
 }

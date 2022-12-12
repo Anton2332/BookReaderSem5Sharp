@@ -39,6 +39,10 @@ public class CommentsController : ControllerBase
         try
         {
             var results = await _commentsService.GetCommentsByBookIdAsync(bookId);
+            if (results.Count() == 0)
+            {
+                return NoContent();
+            }
             return Ok(results);
         }
         catch (Exception ex)
