@@ -52,7 +52,15 @@ public class AuthorService : IAuthorService
 
     public async Task<IEnumerable<AuthorResponseDTO>> GetAllWithoutIdsAsync(int[] ids)
     {
-        var results = await _unitOfWork.AuthorRepository.GetAllWithoutIdsAsync(ids);
-        return results?.Select(_mapper.Map<Author, AuthorResponseDTO>);
+        var results = await _unitOfWork.AuthorRepository.GetAllAsync();
+        
+        var allIds = results.Select(x => x.Id).ToList();
+
+        var trueIds = allIds.Except(ids).ToList();
+        
+        
+        var query = results.Where(x => trueIds.Contains(x.Id)).ToList();
+        
+        return query?.Select(_mapper.Map<Author, AuthorResponseDTO>);
     }
 }

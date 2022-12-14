@@ -22,8 +22,6 @@ public class DBContext : DbContext
 
     public DBContext() : base()
     {
-        Database.EnsureDeleted();
-        Database.EnsureCreated();
     }
 
     public DBContext(DbContextOptions<DBContext> options) : base(options)

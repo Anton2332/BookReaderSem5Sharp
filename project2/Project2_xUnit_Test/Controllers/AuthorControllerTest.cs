@@ -38,16 +38,37 @@ public class AuthorControllerTest
         authorServiceMock.Setup(a => a.GetByIdAsync(It.IsAny<int>()))
             .ReturnsAsync((int i) =>
                 _authors.SingleOrDefault(x => x.Id == i));
+        
+        authorServiceMock.Setup(repo => repo.AddAsync(It.IsAny<AuthorRequestDTO>()))
+            .Callback((AuthorRequestDTO author) =>
+            {
+                AuthorResponseDTO newAuthor = new AuthorResponseDTO()
+                {
+                    Id = _authors.Count + 1,
+                    Name = author.Name
+                };
+                _authors.Add(newAuthor);
+            });
 
         // authorServiceMock.Setup(a => a.AddAsync(It.IsAny<AuthorRequestDTO>()))
         //     .Callback((AuthorRequestDTO author) =>
         //     {
         //         var newAuthor = new AuthorResponseDTO()
         //         {
-        //             Id = authors.Count() + 1,
+        //             Id = _authors.Count() + 1,
         //             Name = author.Name
         //         };
-        //         authors.Add(newAuthor);
+        //         _authors.Add(newAuthor);
+        //     }).Verifiable();
+        
+        // authorServiceMock.Setup(a => a.GetAllWithoutIdsAsync((It.IsAny<int>())))
+        //     .ReturnsAsync((int i) =>
+        //         _authors.SingleOrDefault(x => x.Id == i));
+
+        // authorServiceMock.Setup(serv => serv.DeleteAsync(It.IsAny<int>()))
+        //     .Callback((int id) =>
+        //     {
+        //         _authors.RemoveAt(id - 1);
         //     }).Verifiable();
 
         authorServiceMock.SetupAllProperties();
@@ -55,7 +76,7 @@ public class AuthorControllerTest
     }
 
     [Fact]
-    public async Task AuthorController_GetAuthorById_AuthorResponseDTO()
+    public async Task AuthorController_GetAuthorById_OkResult()
     {
         // Arrange 
         const int id = 1;
@@ -65,12 +86,11 @@ public class AuthorControllerTest
         var author = await _controller.GetAuthorById(id);
         
         //Assert
-        author.Should().BeOfType<OkObjectResult>();
-        author.Should().Subject.Equals(expected);
+        Assert.IsType<OkObjectResult>(author);
     }
     
     [Fact]
-    public async Task AuthorController_GetAuthorById_NotFound()
+    public async Task AuthorController_GetAuthorById_NotFoundResult()
     {
         // Arrange 
         const int id = 3;
@@ -79,32 +99,71 @@ public class AuthorControllerTest
         var author = await _controller.GetAuthorById(id);
         
         //Assert
-        author.Should().BeOfType<NotFoundResult>();
+        Assert.IsType<NotFoundResult>(author);
     }
-
+    
     [Fact]
-    public async Task AuthorController_GetAllAuthors_ListAuthors()
+    public async Task AuthorController_GetAuthorById_MatchResult()
+    {
+        // Arrange 
+        const int id = 1;
+        
+        // Act 
+        var iauthor = await _controller.GetAuthorById(id);
+        
+        //Assert
+        Assert.IsType<OkObjectResult>(iauthor);
+        var okResult = iauthor.Should().BeOfType<OkObjectResult>().Subject;
+        var author = okResult.Value.Should().BeAssignableTo<AuthorResponseDTO>().Subject;
+        
+        Assert.Equal("Author 1", author.Name);
+    }
+    
+    [Fact]
+    public async Task AuthorController_GetAllAuthors_OkResult()
     {
         // Arrange
-        var expected = _authors;
         
         // Act
         var result = await _controller.GetAllAsync();
         
         // Assert
-        result.Should().BeOfType<OkObjectResult>();
-        result.Should().Subject.Equals(expected);
+        Assert.IsType<OkObjectResult>(result);
     }
     
-    // [Fact]
-    // public async Task AuthorController_GetAllAuthors_NoContent()
-    // {
-    //     // Arrange
-    //     
-    //     // Act
-    //     var result = await _controller.GetAllAsync();
-    //     
-    //     // Assert
-    //     result.Should().BeOfType<NoContentResult>();
-    // }
+    [Fact]
+    public async Task AuthorController_GetAllAuthors_MatchResult()
+    {
+        // Arrange
+        
+        // Act
+        var result = await _controller.GetAllAsync();
+        
+        // Assert
+        Assert.IsType<OkObjectResult>(result);
+        var okResult = result.Should().BeOfType<OkObjectResult>().Subject;
+        var author = okResult.Value.Should().BeAssignableTo<List<AuthorResponseDTO>>().Subject;
+        
+        Assert.Equal("Author 1", author[0].Name);
+        
+        Assert.Equal("Author 2", author[1].Name);
+    }
+
+    [Fact]
+    public async void AuthorController_AddAuthor_OkResult()
+    {
+        // Arrange
+        var author = new AuthorRequestDTO()
+        {
+            Name = "Author 3"
+        };
+        
+        //Act
+        var data = await _controller.AddAuthorAsync(author);
+        
+        //Assert
+        Assert.IsType<OkObjectResult>(data);
+    }
+    
+
 }
