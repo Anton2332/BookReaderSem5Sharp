@@ -1,38 +1,89 @@
 {
   "format": 1,
   "restore": {
-    "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\API2\\API2.csproj": {}
+    "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/API2/API2.csproj": {}
   },
   "projects": {
-    "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\API2\\API2.csproj": {
+    "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/SharedProject/SharedProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\API2\\API2.csproj",
-        "projectName": "API2",
-        "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\API2\\API2.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\API2\\obj\\",
+        "projectUniqueName": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/SharedProject/SharedProject.csproj",
+        "projectName": "SharedProject",
+        "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/SharedProject/SharedProject.csproj",
+        "packagesPath": "/home/haribashi/.nuget/packages/",
+        "outputPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/SharedProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/haribashi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/API2/API2.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/API2/API2.csproj",
+        "projectName": "API2",
+        "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/API2/API2.csproj",
+        "packagesPath": "/home/haribashi/.nuget/packages/",
+        "outputPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/API2/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/haribashi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\BLL2\\BLL2.csproj": {
-                "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\BLL2\\BLL2.csproj"
+              "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/SharedProject/SharedProject.csproj": {
+                "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/SharedProject/SharedProject.csproj"
               },
-              "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj": {
-                "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj"
+              "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/BLL2/BLL2.csproj": {
+                "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/BLL2/BLL2.csproj"
               }
             }
           }
@@ -105,36 +156,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\BLL2\\BLL2.csproj": {
+    "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/BLL2/BLL2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\BLL2\\BLL2.csproj",
+        "projectUniqueName": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/BLL2/BLL2.csproj",
         "projectName": "BLL2",
-        "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\BLL2\\BLL2.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\BLL2\\obj\\",
+        "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/BLL2/BLL2.csproj",
+        "packagesPath": "/home/haribashi/.nuget/packages/",
+        "outputPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/BLL2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/haribashi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\DAL2\\DAL2.csproj": {
-                "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\DAL2\\DAL2.csproj"
+              "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/DAL2/DAL2.csproj": {
+                "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/DAL2/DAL2.csproj"
               }
             }
           }
@@ -182,28 +231,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\DAL2\\DAL2.csproj": {
+    "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/DAL2/DAL2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\DAL2\\DAL2.csproj",
+        "projectUniqueName": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/DAL2/DAL2.csproj",
         "projectName": "DAL2",
-        "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\DAL2\\DAL2.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\project2\\DAL2\\obj\\",
+        "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/DAL2/DAL2.csproj",
+        "packagesPath": "/home/haribashi/.nuget/packages/",
+        "outputPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/project2/DAL2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/haribashi/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -267,62 +314,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj",
-        "projectName": "SharedProject",
-        "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,7 +9,7 @@ public class DBContextFactory : IDesignTimeDbContextFactory<DBContext>
     {
         var optionsBuilder = new DbContextOptionsBuilder<DBContext>();
         
-        string connectionString = "Server=localhost;User ID=root;Password=123456;Database=db2_Csharp_sem5";
+        string connectionString = "Server=sqldb;User ID=root;Password=123456;Database=db2_Csharp_sem5";
 
         optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ok54Ie9AzLepDo2gT8shlk+LkfiyijfKaG4hhfMJY51zrDvIbDl1eyo9Cq1+rrzlL8btMLi6S6dL/01tZTclZg==",
+  "dgSpecHash": "xiA9fLbq/5B4ZncHTdIm5zEwdEHylnrqfJl8jALppo+BgSf2hYGrH9iW/YuSa3A0MwyHBaTsv1xlOSw6y0Askg==",
   "success": true,
-  "projectFilePath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\SharedProject\\SharedProject.csproj",
+  "projectFilePath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/SharedProject/SharedProject.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

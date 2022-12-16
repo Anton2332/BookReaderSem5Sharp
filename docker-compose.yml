@@ -1,3 +1,5 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
 version: '3.4'
 
 services:
@@ -7,25 +9,45 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     ports:
-      - "3306:3306"
-        
+      - 3306:3306
   
-  nosqldb: 
+  nosql:
     image: mongo
+    ports:
+      - 27017:27017
   
   cachdata:
     image: redis:alpine
-  
+    ports:
+      - 6379:6379
+
   rabbitmq:
     image: rabbitmq:3-management-alpine
 
   api1:
     image: api1
-    build:
+    build: 
       context: .
-      dockerfile: project1/API1/Dockerfile
-    ports:
-      - "5101:80"
-      - "7101:443"
+      dockerfile: ./project1/API1/Dockerfile
     depends_on:
       - sqldb
+  api2:
+    image: api2
+    build: 
+      context: .
+      dockerfile: ./project2/API2/Dockerfile
+    depends_on:
+      - rabbitmq
+      - sqldb
+      - cachdata
+    
+  api3:
+    image: api3
+    build:
+      context: .
+      dockerfile: ./project3/API3/Dockerfile
+    depends_on:
+      - nosql
+      - rabbitmq
+      - api2
+

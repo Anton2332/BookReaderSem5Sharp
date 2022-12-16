@@ -2799,34 +2799,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anton\\.nuget\\packages\\": {}
+    "/home/haribashi/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\study\\5_semester\\C#\\projects\\BookReader\\projectUser\\API_USER\\API_USER.csproj",
+      "projectUniqueName": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/projectUser/API_USER/API_USER.csproj",
       "projectName": "API_USER",
-      "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\projectUser\\API_USER\\API_USER.csproj",
-      "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-      "outputPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\projectUser\\API_USER\\obj\\",
+      "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/projectUser/API_USER/API_USER.csproj",
+      "packagesPath": "/home/haribashi/.nuget/packages/",
+      "outputPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/projectUser/API_USER/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/haribashi/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\study\\5_semester\\C#\\projects\\BookReader\\projectUser\\BLL_USER\\BLL_USER.csproj": {
-              "projectPath": "D:\\study\\5_semester\\C#\\projects\\BookReader\\projectUser\\BLL_USER\\BLL_USER.csproj"
+            "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/projectUser/BLL_USER/BLL_USER.csproj": {
+              "projectPath": "/home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/projectUser/BLL_USER/BLL_USER.csproj"
             }
           }
         }
@@ -2869,7 +2867,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.404/RuntimeIdentifierGraph.json"
       }
     }
   }

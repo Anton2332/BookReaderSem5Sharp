@@ -30,7 +30,7 @@ builder.Services.AddMassTransit(config =>
 
     config.UsingRabbitMq((ctx, cfg) =>
     {
-        cfg.Host("rabbitmq://localhost");
+        cfg.Host("rabbitmq://rabbitmq");
 
         cfg.ReceiveEndpoint("chapter_notification", c =>
         {

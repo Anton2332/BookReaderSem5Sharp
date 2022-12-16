@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DAL_Redis
-build_property.ProjectDir = D:\study\5_semester\C#\projects\BookReader\RedisHistory\DAL_Redis\
+build_property.ProjectDir = /home/haribashi/study/labs/c#/projects/BookReaderSem5Sharp/RedisHistory/DAL_Redis/
