@@ -17,6 +17,7 @@ COPY ["project1/DAL1/DAL1.csproj", "project1/DAL1/"]
 RUN dotnet restore "project1/API1/API1.csproj"
 COPY . .
 WORKDIR "/src/project1/API1"
+RUN dotnet dev-certs https --trust
 RUN dotnet build "API1.csproj" -c Release -o /app/build
 
 FROM build AS publish

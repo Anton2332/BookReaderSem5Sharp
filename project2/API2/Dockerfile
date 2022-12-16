@@ -18,6 +18,7 @@ COPY ["SharedProject/SharedProject.csproj", "SharedProject/"]
 RUN dotnet restore "project2/API2/API2.csproj"
 COPY . .
 WORKDIR "/src/project2/API2"
+RUN dotnet dev-certs https --trust
 RUN dotnet build "API2.csproj" -c Release -o /app/build
 
 FROM build AS publish

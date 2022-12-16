@@ -5,34 +5,49 @@ version: '3.4'
 services:
 
   sqldb:
-    image: mysql
+    image: mysql:latest
+    container_name: csharp_mysql
+    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     ports:
       - 3306:3306
-  
+    volumes:
+      - sqldbvolume:/var/lib/mysql
+
   nosql:
     image: mongo
+    restart: always
     ports:
       - 27017:27017
+    volumes:
+      - nosqlvolume:/data/db
+
   
   cachdata:
     image: redis:alpine
+    restart: always
     ports:
       - 6379:6379
+    volumes:
+      - cachdatavolume:/data
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
+    restart: always
 
   api1:
     image: api1
+    restart: always
     build: 
       context: .
       dockerfile: ./project1/API1/Dockerfile
     depends_on:
       - sqldb
+
   api2:
     image: api2
+    restart: always
     build: 
       context: .
       dockerfile: ./project2/API2/Dockerfile
@@ -43,6 +58,7 @@ services:
     
   api3:
     image: api3
+    restart: always
     build:
       context: .
       dockerfile: ./project3/API3/Dockerfile
@@ -51,3 +67,7 @@ services:
       - rabbitmq
       - api2
 
+volumes:
+  cachdatavolume:
+  nosqlvolume:
+  sqldbvolume:
